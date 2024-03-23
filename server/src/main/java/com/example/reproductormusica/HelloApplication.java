@@ -15,31 +15,37 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+        // Direccion de los mp3
+        String mp3_1 = new String("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3\\1.mp3");
+        String mp3_2 = new String("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3\\2.mp3");
+        String mp3_3 = new String("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3\\3.mp3");
+        // Creacion de la lista doblemente enlazada
         DoublyLinkedList playlist = new DoublyLinkedList();
         // Agregar archivos MP3 a la lista
-        playlist.add(new File("1.mp3"));
-        playlist.add(new File("2.mp3"));
-        playlist.add(new File("3.mp3"));
-        // Extraer metadatos de los archivos MP3
-        Node current = playlist.head;
+        playlist.add(new File(mp3_1));
+        playlist.add(new File(mp3_2));
+        playlist.add(new File(mp3_3));
         playlist.printListContents();
-        while (current != null) {
-            current.extractMetadata();
-            System.out.println("Nombre: " + current.title);
-            System.out.println("Artista: " + current.artist);
-            System.out.println("Album: " + current.album);
-            System.out.println("Genero: " + current.genre);
-            System.out.println("-----------------------------");
-            current = current.next;
-        }
-        // Reproducir la lista de reproducción
-        current = playlist.head;
-        while (current != null) {
-            playlist.play(current);
-            current = current.next;
-        }
+        System.out.println(playlist.size());
+        // Creacion de los canciones como objetos
+        Song song1 = new Song(new File(mp3_1));
+        Song song2 = new Song(new File(mp3_2));
+        Song song3 = new Song(new File(mp3_3));
+        // Extraer metadata de los archivos MP3
+        song1.extractMetadata();
+        song2.extractMetadata();
+        song3.extractMetadata();
+        song1.printMetadata();
+        song2.printMetadata();
+        song3.printMetadata();
+        playlist.remove(2);
+        playlist.printListContents();
+        CircularSinglyLinkedList Artists = new CircularSinglyLinkedList();
+        Artists.insertLast(song1.getArtist());
+        Artists.insertLast(song2.getArtist());
+        Artists.insertLast(song3.getArtist());
+        Artists.printList();
     }
-
     public static void main(String[] args) {
         launch();
     }
