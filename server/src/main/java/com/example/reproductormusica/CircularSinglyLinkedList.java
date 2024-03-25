@@ -2,7 +2,7 @@ package com.example.reproductormusica;
 
 public class CircularSinglyLinkedList {
     public NodeCircular inicio;
-    public void insertLast(String dato,) {
+    public void insertLast(String dato) {
         NodeCircular nuevo = new NodeCircular(dato);
         if (inicio == null) {
             inicio = nuevo;
