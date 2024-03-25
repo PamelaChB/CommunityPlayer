@@ -26,6 +26,7 @@ public class Song {
         this.album = "";
         this.genre = "";
     }
+
     public String getTitle(){
         return this.title;
     }

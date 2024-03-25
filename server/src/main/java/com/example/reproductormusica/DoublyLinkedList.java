@@ -14,9 +14,7 @@ import java.io.IOException;
 public class DoublyLinkedList {
     Node head;
     Node tail;
-    String artist;
-    File mp3File;
-
+    Node current;
 
     // Método para agregar un archivo MP3 a la lista
     public void add(File mp3File) {
@@ -85,15 +83,19 @@ public class DoublyLinkedList {
         System.out.println("Canción eliminada correctamente");
     }
 
+    public File get(int index) {
+        Node current = head;
+        int currentNumber = 0;
+        while (current != null && currentNumber < index) {
+            current = current.next;
+            currentNumber ++;
 
-    // Método para reproducir un archivo MP3
-    public void play(Node node) {
-        try {
-            FileInputStream fis = new FileInputStream(node.mp3File);
-            Player player = new Player(fis);
-            player.play();
-        } catch (FileNotFoundException | javazoom.jl.decoder.JavaLayerException e) {
-            e.printStackTrace();
+        }
+        if (current == null) {
+            return this.head.mp3File;
+        }else {
+            return current.mp3File;
         }
     }
+
 }
