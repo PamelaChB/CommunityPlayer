@@ -2,7 +2,6 @@ package com.example.reproductormusica;
 
 import java.io.File;
 
-
 public class Node {
     Node prev;
     Node next;

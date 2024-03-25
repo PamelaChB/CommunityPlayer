@@ -1,22 +1,12 @@
 package com.example.reproductormusica;
-import javazoom.jl.player.Player;
-import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.tag.FieldKey;
-import org.jaudiotagger.tag.Tag;
-import org.jaudiotagger.tag.TagException;
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 
 public class DoublyLinkedList {
     Node head;
     Node tail;
-    String artist;
-    File mp3File;
-
+    Node current;
+    int size = 0;
 
     // Método para agregar un archivo MP3 a la lista
     public void add(File mp3File) {
@@ -24,10 +14,12 @@ public class DoublyLinkedList {
         if (head == null) {
             head = newNode;
             tail = newNode;
+            this.size++;
         } else {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
+            this.size++;
         }
     }
     public void printListContents() {
@@ -39,61 +31,63 @@ public class DoublyLinkedList {
         }
     }
     public int size() {
-        int size = 0;
-        Node current = head;
-        while (current != null) {
-            size++;
-            current = current.next;
-        }
-        return size;
+        return this.size;
     }
 
     public void remove(int index) {
-        if (index < 1 || index > size()) {
-            System.out.println("Índice fuera de rango");
+        if (index < 0 || index >= size) {
+            // Índice fuera de rango, no se puede eliminar
+            System.out.println("Índice fuera de rango.");
             return;
         }
-        Node current = head;
-        int currentIndex = 1;
-        // Caso especial: si se elimina el primer nodo
-        if (index == 1) {
-            if (head == tail) { // Solo hay un nodo en la lista
+
+        // Caso especial: si la lista está vacía
+        if (size == 0) {
+            System.out.println("La lista está vacía.");
+            return;
+        }
+
+        // Caso especial: si se está eliminando el primer elemento
+        if (index == 0) {
+            if (size == 1) {
+                // Si solo hay un elemento en la lista
                 head = null;
                 tail = null;
             } else {
                 head = head.next;
                 head.prev = null;
             }
-            System.out.println("Canción eliminada correctamente");
-            return;
-        }
-        // Caso especial: si se elimina el último nodo
-        if (index == size()) {
+        } else if (index == size - 1) {
+            // Caso especial: si se está eliminando el último elemento
             tail = tail.prev;
             tail.next = null;
-            System.out.println("Canción eliminada correctamente");
-            return;
+        } else {
+            // Caso general: eliminar un nodo en medio de la lista
+            Node current = head;
+            int currentIndex = 0;
+            while (currentIndex < index) {
+                current = current.next;
+                currentIndex++;
+            }
+            // Enlazar el nodo anterior y el siguiente al nodo actual para eliminarlo
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
         }
-        // Buscar el nodo en la posición especificada
-        while (currentIndex < index) {
-            current = current.next;
-            currentIndex++;
-        }
-        // Eliminar el nodo actual
-        current.prev.next = current.next;
-        current.next.prev = current.prev;
-        System.out.println("Canción eliminada correctamente");
+        size--;
     }
 
+    public File get(int index) {
+        Node current = head;
+        int currentNumber = 0;
+        while (current != null && currentNumber < index) {
+            current = current.next;
+            currentNumber ++;
 
-    // Método para reproducir un archivo MP3
-    public void play(Node node) {
-        try {
-            FileInputStream fis = new FileInputStream(node.mp3File);
-            Player player = new Player(fis);
-            player.play();
-        } catch (FileNotFoundException | javazoom.jl.decoder.JavaLayerException e) {
-            e.printStackTrace();
+        }
+        if (current == null) {
+            return this.head.mp3File;
+        }else {
+            return current.mp3File;
         }
     }
 }
