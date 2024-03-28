@@ -27,10 +27,23 @@ public class Song {
         this.genre = "";
     }
 
+    public void setUp_votes(int num){
+        this.up_votes += num;
+    }
+    public void setDown_votes(int num){
+        this.down_votes += num;
+    }
+
     public String getTitle(){
         return this.title;
     }
 
+    public String getUp_votes(){
+        return String.valueOf(this.up_votes);
+    }
+    public String getDown_votes(){
+        return String.valueOf(this.down_votes);
+    }
     public String getArtist(){
         return this.artist;
     }
