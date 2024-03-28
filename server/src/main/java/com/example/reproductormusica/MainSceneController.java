@@ -46,7 +46,7 @@ public class MainSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        directory = new File("server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
+        directory = new File("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
         songs = directory.listFiles();
         if(songs != null) {
             for(File file : songs) {
