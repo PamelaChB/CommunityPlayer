@@ -4,26 +4,32 @@ import javafx.fxml.Initializable;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.VBox;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.util.Duration;
 import javafx.animation.Timeline;
 import javafx.animation.KeyFrame;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class MainSceneController implements Initializable {
-
+    private static final Logger logger = LogManager.getLogger(MainSceneController.class);
     private Media media;
     private MediaPlayer mediaPlayer;
     private File directory;
     private File[] songs;
     private DoublyLinkedList playlist = new DoublyLinkedList();
+
+    private CircularSinglyLinkedList artistList = new CircularSinglyLinkedList();
     private int SongNumber = 0;
     @FXML
     private Label artistLabel;
@@ -43,28 +49,117 @@ public class MainSceneController implements Initializable {
     private Slider progressSlider;
     @FXML
     private Timeline timeline;
+    @FXML
+    private Label songList;
+    @FXML
+    private VBox artistLabelsContainer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        System.setProperty("log4j.configurationFile", "./server/src/main/resources/log4j2.xml");
+        logger.info("Prueba de escritura de errores");
+
+        generateError(); //Genera un error al propio para observarlo en el app.log
+
         directory = new File("server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
         songs = directory.listFiles();
         if(songs != null) {
             for(File file : songs) {
                 playlist.add(file);
-                System.out.println(file);
+                logger.info(file);
             }
         }
         try {
             if (playlist.size()>0) {
                 media = new Media(playlist.get(SongNumber).toURI().toString());
                 mediaPlayer = new MediaPlayer(media);
+                logger.info(media);
+                logger.info(mediaPlayer);
 
             }else{
-                System.out.println("No se encontraron archivos de música en el directorio.");
+                logger.info("No se encontraron archivos de música en el directorio.");
             }
 
         } catch (Exception e) {
-            System.out.println("Error loading media: " + e.getMessage());
+            logger.error("Error loading media: " + e.getMessage());
+        }
+        // Recorre la lista de canciones y extraer el nombre del artista de cada una
+        for (File file : songs) {
+            Song song = new Song(file);
+            song.extractMetadata();
+            artistList.insertLast(song.getArtist());
+            logger.info(file);
+            logger.info(song);
+        }
+
+        // Eliminar duplicados usando HashSet
+        HashSet<String> uniqueArtists = new HashSet<>();
+
+        // Recorrer la lista de canciones y extraer el nombre del artista de cada una
+        for (File file : songs) {
+            Song song = new Song(file);
+            song.extractMetadata();
+            uniqueArtists.add(song.getArtist());
+            logger.info(file);
+            logger.info(song);
+        }
+
+        // Limpiar la lista enlazada y agregar los elementos únicos al conjunto
+        artistList.clear();
+        artistList.addAll(uniqueArtists);
+
+        // Imprimir la lista actualizada
+        artistList.printList();
+
+        // Crear y agregar un Label para cada artista al VBox
+        for (String artist : uniqueArtists) {
+            Label artistLabel = new Label(artist);
+            artistLabelsContainer.getChildren().add(artistLabel);
+            logger.info(artist);
+            logger.info(artistLabel);
+        }
+        if (songs != null) {
+            // Crea un HashMap para almacenar las canciones por cada artista
+            HashMap<String, List<String>> artistSongsMap = new HashMap<>();
+            for (File file : songs) {
+                Song song = new Song(file);
+                song.extractMetadata();
+                String artist = song.getArtist();
+                String title = song.getTitle();
+
+                logger.info(file);
+                logger.info(song);
+                logger.info(artist);
+                logger.info(title);
+
+                // Si el artista ya está en el mapa, agrega la canción a la lista existente
+                if (artistSongsMap.containsKey(artist)) {
+                    List<String> artistSongs = artistSongsMap.get(artist);
+                    artistSongs.add(title);
+
+                    logger.info(artistSongs);
+
+                } else {
+                    // Si el artista no está en el mapa, crea una nueva lista de canciones
+                    List<String> artistSongs = new ArrayList<>();
+                    artistSongs.add(title);
+                    artistSongsMap.put(artist, artistSongs);
+
+                    logger.info(artistSongs);
+                }
+            }
+
+            // Itera sobre el mapa y muestra los artistas y sus canciones correspondientes
+            for (Map.Entry<String, List<String>> entry : artistSongsMap.entrySet()) {
+                String artist = entry.getKey();
+                List<String> songs = entry.getValue();
+                // Imprime el nombre del artista y la lista de canciones correspondientes
+                logger.info("Artista: " + artist);
+                logger.info("Canciones: " + songs);
+            }
+        } else {
+            logger.info("No se encontraron archivos de música en el directorio.");
         }
         // Controlar el volumen
         volumeController.valueProperty().addListener(new ChangeListener<Number>() {
@@ -98,6 +193,15 @@ public class MainSceneController implements Initializable {
                 mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
             }
         });
+    }
+    private void generateError() {
+        try {
+            // Intentamos dividir por cero, lo que generará una ArithmeticException
+            int result = 1 / 0;
+        } catch (ArithmeticException e) {
+            // Capturamos la excepción y la imprimimos
+            logger.error("Error generado por dividir por cero: " + e.getMessage());
+        }
     }
     @FXML
     public void playMedia() {

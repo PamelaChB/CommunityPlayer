@@ -1,5 +1,7 @@
 package com.example.reproductormusica;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.tag.FieldKey;
@@ -9,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Song {
+
+    private static final Logger logger = LogManager.getLogger(MainSceneController.class);
     // Atributos
     File mp3File;
     String title;
@@ -68,7 +72,7 @@ public class Song {
                 this.genre = genre;
             }
         } catch (IOException | TagException | org.jaudiotagger.audio.exceptions.ReadOnlyFileException | org.jaudiotagger.audio.exceptions.InvalidAudioFrameException | org.jaudiotagger.audio.exceptions.CannotReadException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
     }
 

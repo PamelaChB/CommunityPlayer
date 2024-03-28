@@ -1,0 +1,704 @@
+2024-03-28 13:23:01,107 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = JMImplementation:type=MBeanServerDelegate
+2024-03-28 13:23:01,110 TRACE j.m.mbeanserver [JavaFX Application Thread] name = JMImplementation:type=MBeanServerDelegate
+2024-03-28 13:23:01,110 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object JMImplementation:type=MBeanServerDelegate
+2024-03-28 13:23:01,112 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered JMImplementation:type=MBeanServerDelegate
+2024-03-28 13:23:01,123 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.RuntimeImpl
+2024-03-28 13:23:01,125 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:type=Runtime
+2024-03-28 13:23:01,125 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:type=Runtime
+2024-03-28 13:23:01,125 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:type=Runtime
+2024-03-28 13:23:01,125 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:type=Runtime
+2024-03-28 13:23:01,130 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for com.sun.management.internal.HotSpotThreadImpl
+2024-03-28 13:23:01,130 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:type=Threading
+2024-03-28 13:23:01,130 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:type=Threading
+2024-03-28 13:23:01,130 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:type=Threading
+2024-03-28 13:23:01,130 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:type=Threading
+2024-03-28 13:23:01,132 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for com.sun.management.internal.OperatingSystemImpl
+2024-03-28 13:23:01,133 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:type=OperatingSystem
+2024-03-28 13:23:01,133 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:type=OperatingSystem
+2024-03-28 13:23:01,133 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:type=OperatingSystem
+2024-03-28 13:23:01,133 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:type=OperatingSystem
+2024-03-28 13:23:01,136 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryManagerImpl
+2024-03-28 13:23:01,136 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=CodeCacheManager,type=MemoryManager
+2024-03-28 13:23:01,136 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=CodeCacheManager,type=MemoryManager
+2024-03-28 13:23:01,136 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=CodeCacheManager,type=MemoryManager
+2024-03-28 13:23:01,136 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=CodeCacheManager,type=MemoryManager
+2024-03-28 13:23:01,136 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryManagerImpl
+2024-03-28 13:23:01,136 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=Metaspace Manager,type=MemoryManager
+2024-03-28 13:23:01,136 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=Metaspace Manager,type=MemoryManager
+2024-03-28 13:23:01,137 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=Metaspace Manager,type=MemoryManager
+2024-03-28 13:23:01,137 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=Metaspace Manager,type=MemoryManager
+2024-03-28 13:23:01,138 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,138 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=CodeHeap 'non-nmethods',type=MemoryPool
+2024-03-28 13:23:01,138 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=CodeHeap 'non-nmethods',type=MemoryPool
+2024-03-28 13:23:01,138 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=CodeHeap 'non-nmethods',type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=CodeHeap 'non-nmethods',type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=Metaspace,type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=Metaspace,type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=Metaspace,type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=Metaspace,type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=CodeHeap 'profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=CodeHeap 'profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=CodeHeap 'profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=CodeHeap 'profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,139 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=Compressed Class Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=Compressed Class Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=Compressed Class Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=Compressed Class Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=G1 Eden Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=G1 Eden Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=G1 Eden Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=G1 Eden Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=G1 Old Gen,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=G1 Old Gen,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=G1 Old Gen,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=G1 Old Gen,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=G1 Survivor Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=G1 Survivor Space,type=MemoryPool
+2024-03-28 13:23:01,140 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=G1 Survivor Space,type=MemoryPool
+2024-03-28 13:23:01,142 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=G1 Survivor Space,type=MemoryPool
+2024-03-28 13:23:01,142 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryPoolImpl
+2024-03-28 13:23:01,142 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=CodeHeap 'non-profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,142 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=CodeHeap 'non-profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,142 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=CodeHeap 'non-profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,142 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=CodeHeap 'non-profiled nmethods',type=MemoryPool
+2024-03-28 13:23:01,143 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.CompilationImpl
+2024-03-28 13:23:01,143 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:type=Compilation
+2024-03-28 13:23:01,143 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:type=Compilation
+2024-03-28 13:23:01,143 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:type=Compilation
+2024-03-28 13:23:01,143 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:type=Compilation
+2024-03-28 13:23:01,144 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.MemoryImpl
+2024-03-28 13:23:01,144 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:type=Memory
+2024-03-28 13:23:01,144 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:type=Memory
+2024-03-28 13:23:01,144 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:type=Memory
+2024-03-28 13:23:01,144 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:type=Memory
+2024-03-28 13:23:01,149 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.ManagementFactoryHelper$PlatformLoggingImpl
+2024-03-28 13:23:01,149 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.util.logging:type=Logging
+2024-03-28 13:23:01,149 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.util.logging:type=Logging
+2024-03-28 13:23:01,149 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.util.logging:type=Logging
+2024-03-28 13:23:01,149 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.util.logging:type=Logging
+2024-03-28 13:23:01,149 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.ClassLoadingImpl
+2024-03-28 13:23:01,150 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:type=ClassLoading
+2024-03-28 13:23:01,150 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:type=ClassLoading
+2024-03-28 13:23:01,150 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:type=ClassLoading
+2024-03-28 13:23:01,150 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:type=ClassLoading
+2024-03-28 13:23:01,201 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = com.sun.management:type=DiagnosticCommand
+2024-03-28 13:23:01,201 TRACE j.m.mbeanserver [JavaFX Application Thread] name = com.sun.management:type=DiagnosticCommand
+2024-03-28 13:23:01,201 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object com.sun.management:type=DiagnosticCommand
+2024-03-28 13:23:01,201 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered com.sun.management:type=DiagnosticCommand
+2024-03-28 13:23:01,202 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for com.sun.management.internal.GarbageCollectorExtImpl
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=G1 Young Generation,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=G1 Young Generation,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=G1 Young Generation,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=G1 Young Generation,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for com.sun.management.internal.GarbageCollectorExtImpl
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=G1 Concurrent GC,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=G1 Concurrent GC,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=G1 Concurrent GC,type=GarbageCollector
+2024-03-28 13:23:01,203 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=G1 Concurrent GC,type=GarbageCollector
+2024-03-28 13:23:01,204 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for com.sun.management.internal.GarbageCollectorExtImpl
+2024-03-28 13:23:01,204 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.lang:name=G1 Old Generation,type=GarbageCollector
+2024-03-28 13:23:01,204 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.lang:name=G1 Old Generation,type=GarbageCollector
+2024-03-28 13:23:01,204 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.lang:name=G1 Old Generation,type=GarbageCollector
+2024-03-28 13:23:01,204 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.lang:name=G1 Old Generation,type=GarbageCollector
+2024-03-28 13:23:01,206 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for com.sun.management.internal.HotSpotDiagnostic
+2024-03-28 13:23:01,206 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = com.sun.management:type=HotSpotDiagnostic
+2024-03-28 13:23:01,206 TRACE j.m.mbeanserver [JavaFX Application Thread] name = com.sun.management:type=HotSpotDiagnostic
+2024-03-28 13:23:01,206 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object com.sun.management:type=HotSpotDiagnostic
+2024-03-28 13:23:01,206 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered com.sun.management:type=HotSpotDiagnostic
+2024-03-28 13:23:01,208 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.ManagementFactoryHelper$1
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.nio:name=mapped,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.nio:name=mapped,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.nio:name=mapped,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.nio:name=mapped,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.ManagementFactoryHelper$1
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.nio:name=direct,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.nio:name=direct,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.nio:name=direct,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.nio:name=direct,type=BufferPool
+2024-03-28 13:23:01,208 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for sun.management.ManagementFactoryHelper$1
+2024-03-28 13:23:01,208 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = java.nio:name=mapped - 'non-volatile memory',type=BufferPool
+2024-03-28 13:23:01,210 TRACE j.m.mbeanserver [JavaFX Application Thread] name = java.nio:name=mapped - 'non-volatile memory',type=BufferPool
+2024-03-28 13:23:01,210 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object java.nio:name=mapped - 'non-volatile memory',type=BufferPool
+2024-03-28 13:23:01,210 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered java.nio:name=mapped - 'non-volatile memory',type=BufferPool
+2024-03-28 13:23:01,214 TRACE j.m.misc [JavaFX Application Thread] Building MBeanInfo for jdk.management.jfr.FlightRecorderMXBeanImpl
+2024-03-28 13:23:01,215 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = jdk.management.jfr:type=FlightRecorder
+2024-03-28 13:23:01,215 TRACE j.m.mbeanserver [JavaFX Application Thread] name = jdk.management.jfr:type=FlightRecorder
+2024-03-28 13:23:01,215 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object jdk.management.jfr:type=FlightRecorder
+2024-03-28 13:23:01,215 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered jdk.management.jfr:type=FlightRecorder
+2024-03-28 13:23:01,217 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:01,218 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:01,218 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:01,218 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:01,218 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:01,218 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:01,220 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:01,220 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:01,220 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object org.apache.logging.log4j2:component=StatusLogger,type=26a1ab54
+2024-03-28 13:23:01,220 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:01,221 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:01,221 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:01,222 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:01,222 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object org.apache.logging.log4j2:component=ContextSelector,type=26a1ab54
+2024-03-28 13:23:01,222 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:01,223 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:01,223 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:01,224 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:01,224 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object org.apache.logging.log4j2:component=Loggers,name=,type=26a1ab54
+2024-03-28 13:23:01,224 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:01,224 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile
+2024-03-28 13:23:01,225 TRACE j.m.mbeanserver [JavaFX Application Thread] ObjectName = org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile
+2024-03-28 13:23:01,225 TRACE j.m.mbeanserver [JavaFX Application Thread] name = org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile
+2024-03-28 13:23:01,225 TRACE j.m.mbeanserver [JavaFX Application Thread] Send create notification of object org.apache.logging.log4j2:component=Appenders,name=LogFile,type=26a1ab54
+2024-03-28 13:23:01,225 TRACE j.m.mbeanserver [JavaFX Application Thread] JMX.mbean.registered org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile
+2024-03-28 13:23:01,421 INFO c.e.r.MainSceneController [JavaFX Application Thread] Prueba de escritura de errores
+2024-03-28 13:23:01,422 ERROR c.e.r.MainSceneController [JavaFX Application Thread] Error generado por dividir por cero: / by zero
+2024-03-28 13:23:01,424 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\1.mp3
+2024-03-28 13:23:01,425 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\2.mp3
+2024-03-28 13:23:01,425 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\3.mp3
+2024-03-28 13:23:01,425 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\4.mp3
+2024-03-28 13:23:01,425 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\5.mp3
+2024-03-28 13:23:01,425 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\6.mp3
+2024-03-28 13:23:01,530 INFO c.e.r.MainSceneController [JavaFX Application Thread] javafx.scene.media.Media@5ef13d34
+2024-03-28 13:23:01,530 INFO c.e.r.MainSceneController [JavaFX Application Thread] javafx.scene.media.MediaPlayer@4b7a0b6d
+2024-03-28 13:23:01,629 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\1.mp3
+2024-03-28 13:23:01,629 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@4d548d21
+2024-03-28 13:23:01,635 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\2.mp3
+2024-03-28 13:23:01,635 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@1f635a11
+2024-03-28 13:23:01,641 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\3.mp3
+2024-03-28 13:23:01,642 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@5309bef5
+2024-03-28 13:23:01,647 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\4.mp3
+2024-03-28 13:23:01,647 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@169a4646
+2024-03-28 13:23:01,653 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\5.mp3
+2024-03-28 13:23:01,653 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@7fcefc31
+2024-03-28 13:23:01,661 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\6.mp3
+2024-03-28 13:23:01,661 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@7af8920b
+2024-03-28 13:23:01,669 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\1.mp3
+2024-03-28 13:23:01,669 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@641865b7
+2024-03-28 13:23:01,674 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\2.mp3
+2024-03-28 13:23:01,674 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@2074a704
+2024-03-28 13:23:01,679 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\3.mp3
+2024-03-28 13:23:01,680 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@2853f84f
+2024-03-28 13:23:01,685 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\4.mp3
+2024-03-28 13:23:01,685 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@16055f84
+2024-03-28 13:23:01,688 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\5.mp3
+2024-03-28 13:23:01,689 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@3117b52e
+2024-03-28 13:23:01,694 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\6.mp3
+2024-03-28 13:23:01,694 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@34de788f
+2024-03-28 13:23:01,694 INFO c.e.r.MainSceneController [JavaFX Application Thread] Bad Bunny,
+2024-03-28 13:23:01,694 INFO c.e.r.MainSceneController [JavaFX Application Thread] Rels B,
+2024-03-28 13:23:01,695 INFO c.e.r.MainSceneController [JavaFX Application Thread] Bad Bunny
+2024-03-28 13:23:01,695 INFO c.e.r.MainSceneController [JavaFX Application Thread] Label@3f3df95f[styleClass=label]'Bad Bunny'
+2024-03-28 13:23:01,695 INFO c.e.r.MainSceneController [JavaFX Application Thread] Rels B
+2024-03-28 13:23:01,695 INFO c.e.r.MainSceneController [JavaFX Application Thread] Label@330f8553[styleClass=label]'Rels B'
+2024-03-28 13:23:01,701 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\1.mp3
+2024-03-28 13:23:01,702 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@745289bd
+2024-03-28 13:23:01,702 INFO c.e.r.MainSceneController [JavaFX Application Thread] Rels B
+2024-03-28 13:23:01,702 INFO c.e.r.MainSceneController [JavaFX Application Thread] Mary Jane
+2024-03-28 13:23:01,702 INFO c.e.r.MainSceneController [JavaFX Application Thread] [Mary Jane]
+2024-03-28 13:23:01,704 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\2.mp3
+2024-03-28 13:23:01,704 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@3494364b
+2024-03-28 13:23:01,704 INFO c.e.r.MainSceneController [JavaFX Application Thread] Rels B
+2024-03-28 13:23:01,704 INFO c.e.r.MainSceneController [JavaFX Application Thread] Nombre
+2024-03-28 13:23:01,704 INFO c.e.r.MainSceneController [JavaFX Application Thread] [Mary Jane, Nombre]
+2024-03-28 13:23:01,710 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\3.mp3
+2024-03-28 13:23:01,710 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@64b3c687
+2024-03-28 13:23:01,710 INFO c.e.r.MainSceneController [JavaFX Application Thread] Rels B
+2024-03-28 13:23:01,710 INFO c.e.r.MainSceneController [JavaFX Application Thread] Otra
+2024-03-28 13:23:01,710 INFO c.e.r.MainSceneController [JavaFX Application Thread] [Mary Jane, Nombre, Otra]
+2024-03-28 13:23:01,715 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\4.mp3
+2024-03-28 13:23:01,715 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@2b59e25f
+2024-03-28 13:23:01,716 INFO c.e.r.MainSceneController [JavaFX Application Thread] Bad Bunny
+2024-03-28 13:23:01,716 INFO c.e.r.MainSceneController [JavaFX Application Thread] TE DESEO LO MEJOR
+2024-03-28 13:23:01,716 INFO c.e.r.MainSceneController [JavaFX Application Thread] [TE DESEO LO MEJOR]
+2024-03-28 13:23:01,720 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\5.mp3
+2024-03-28 13:23:01,720 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@4b2699e8
+2024-03-28 13:23:01,720 INFO c.e.r.MainSceneController [JavaFX Application Thread] Bad Bunny
+2024-03-28 13:23:01,720 INFO c.e.r.MainSceneController [JavaFX Application Thread] La noche de anoche
+2024-03-28 13:23:01,720 INFO c.e.r.MainSceneController [JavaFX Application Thread] [TE DESEO LO MEJOR, La noche de anoche]
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] server\src\main\java\com\example\reproductormusica\mp3\6.mp3
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] com.example.reproductormusica.Song@5e95d8a9
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] Bad Bunny
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] Yo visto así
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] [TE DESEO LO MEJOR, La noche de anoche, Yo visto así]
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] Artista: Bad Bunny
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] Canciones: [TE DESEO LO MEJOR, La noche de anoche, Yo visto así]
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] Artista: Rels B
+2024-03-28 13:23:01,724 INFO c.e.r.MainSceneController [JavaFX Application Thread] Canciones: [Mary Jane, Nombre, Otra]
+2024-03-28 13:23:01,762 TRACE j.css [JavaFX Application Thread] [1,0],*,<33>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,1],{,<28>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,2],-fx-background-color,<11>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,22],:,<31>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,24],#ADBC9F,<37>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,31],;,<30>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,33],-fx-border-color,<11>
+2024-03-28 13:23:01,763 TRACE j.css [JavaFX Application Thread] [1,49],:,<31>
+2024-03-28 13:23:01,764 TRACE j.css [JavaFX Application Thread] [1,51],#12372A,<37>
+2024-03-28 13:23:01,764 TRACE j.css [JavaFX Application Thread] [1,58],;,<30>
+2024-03-28 13:23:01,764 TRACE j.css [JavaFX Application Thread] [1,59],},<29>
+2024-03-28 13:23:01,764 TRACE j.css [JavaFX Application Thread] [-1,-1],EOF,<-1>
+2024-03-28 13:23:01,779 TRACE j.s.layout [JavaFX Application Thread] AnchorPane@18520e8a[styleClass=root] resized to 0.0 x 0.0
+2024-03-28 13:23:01,779 TRACE j.s.layout [JavaFX Application Thread] AnchorPane@18520e8a[styleClass=root] resized to 653.0 x 0.0
+2024-03-28 13:23:01,786 TRACE j.s.layout [JavaFX Application Thread] AnchorPane@18520e8a[styleClass=root] resized to 653.0 x 420.0
+2024-03-28 13:23:01,849 TRACE j.css [JavaFX Application Thread] [1,0],*,<33>
+2024-03-28 13:23:01,849 TRACE j.css [JavaFX Application Thread] [1,1],{,<28>
+2024-03-28 13:23:01,849 TRACE j.css [JavaFX Application Thread] [1,2],-fx-background-color,<11>
+2024-03-28 13:23:01,849 TRACE j.css [JavaFX Application Thread] [1,22],:,<31>
+2024-03-28 13:23:01,849 TRACE j.css [JavaFX Application Thread] [1,24],FBFADA,<11>
+2024-03-28 13:23:01,849 TRACE j.css [JavaFX Application Thread] [1,30],;,<30>
+2024-03-28 13:23:01,856 TRACE j.css [JavaFX Application Thread] [1,32],-fx-border-width,<11>
+2024-03-28 13:23:01,856 TRACE j.css [JavaFX Application Thread] [1,48],:,<31>
+2024-03-28 13:23:01,856 TRACE j.css [JavaFX Application Thread] [1,50],222,<13>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [1,53],;,<30>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [1,55],-fx-border-color,<11>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [1,71],:,<31>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [1,73],436850,<13>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [1,79],;,<30>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [1,80],},<29>
+2024-03-28 13:23:01,857 TRACE j.css [JavaFX Application Thread] [-1,-1],EOF,<-1>
+2024-03-28 13:23:01,867 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: AnchorPane@18520e8a[styleClass=root], name: background, value: null], value =javafx.scene.layout.Background@6831ac82, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,868 WARN j.css [JavaFX Application Thread] Caught 'java.lang.ClassCastException: class java.lang.Double cannot be cast to class javafx.scene.paint.Paint (java.lang.Double is in module java.base of loader 'bootstrap'; javafx.scene.paint.Paint is in module javafx.graphics@21-ea of loader 'app')' while converting value for '-fx-border-color' from inline style on AnchorPane@18520e8a[styleClass=root]
+2024-03-28 13:23:01,868 DEBUG j.css [JavaFX Application Thread] node = AnchorPane@18520e8a[styleClass=root]
+2024-03-28 13:23:01,868 DEBUG j.css [JavaFX Application Thread] cssMetaData = CSSProperty {property: -fx-border-color, converter: LayeredBorderPaintConverter, initalValue: null, inherits: false, subProperties: []}
+2024-03-28 13:23:01,869 DEBUG j.css [JavaFX Application Thread] styles = [* { -fx-border-color: <Value>
+  <value values="1">
+    <Value>
+      <value values="4">
+        <Value>
+          <value>
+            <Value>
+              <value>436850.0px</value>
+              <converter>null</converter>
+            </Value>          </value>
+          <converter>SizeConverter</converter>
+        </Value>        <Value>
+          <value>
+            <Value>
+              <value>436850.0px</value>
+              <converter>null</converter>
+            </Value>          </value>
+          <converter>SizeConverter</converter>
+        </Value>        <Value>
+          <value>
+            <Value>
+              <value>436850.0px</value>
+              <converter>null</converter>
+            </Value>          </value>
+          <converter>SizeConverter</converter>
+        </Value>        <Value>
+          <value>
+            <Value>
+              <value>436850.0px</value>
+              <converter>null</converter>
+            </Value>          </value>
+          <converter>SizeConverter</converter>
+        </Value>      </value>
+      <converter>StrokeBorderPaintConverter</converter>
+    </Value>  </value>
+  <converter>LayeredBorderPaintConverter</converter>
+</Value> } ]
+2024-03-28 13:23:01,870 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: AnchorPane@18520e8a[styleClass=root], name: border, value: null], value =null, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,893 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@7cfddf33] on ObjectProperty [bean: Label[id=songLabel, styleClass=label]'', name: skin, value: javafx.scene.control.skin.LabelSkin@7cfddf33]
+2024-03-28 13:23:01,896 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=19.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,896 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=19.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,897 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,898 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,898 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,898 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,898 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,908 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@4393cad6] on ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: skin, value: javafx.scene.control.skin.ButtonSkin@4393cad6]
+2024-03-28 13:23:01,909 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,909 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,918 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.SliderSkin@28b4ce1d] on ObjectProperty [bean: Slider[id=volumeController, styleClass=slider], name: skin, value: javafx.scene.control.skin.SliderSkin@28b4ce1d]
+2024-03-28 13:23:01,918 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: StackPane@3889bdd5[styleClass=track], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=3.0, right=3.0, bottom=3.0, left=3.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,919 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: StackPane@3889bdd5[styleClass=track], name: background, value: null], value =javafx.scene.layout.Background@7c8d89c8, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,920 TRACE j.css [JavaFX Application Thread] -fx-effect, call applyStyle: ObjectProperty [bean: SliderSkin$2@65da0275[styleClass=thumb], name: effect, value: null], value =javafx.scene.effect.DropShadow@4f418246, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,920 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: SliderSkin$2@65da0275[styleClass=thumb], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=7.0, right=7.0, bottom=7.0, left=7.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,922 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: SliderSkin$2@65da0275[styleClass=thumb], name: background, value: null], value =javafx.scene.layout.Background@8d0b00e, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,922 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=stopButton, styleClass=button]'Stop', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,922 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=stopButton, styleClass=button]'Stop', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,922 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=stopButton, styleClass=button]'Stop', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,923 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=stopButton, styleClass=button]'Stop', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,923 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=stopButton, styleClass=button]'Stop', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,924 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@7f4eff15] on ObjectProperty [bean: Button[id=stopButton, styleClass=button]'Stop', name: skin, value: javafx.scene.control.skin.ButtonSkin@7f4eff15]
+2024-03-28 13:23:01,924 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,924 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,924 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=previousButton, styleClass=button]'Previous', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,925 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=previousButton, styleClass=button]'Previous', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,925 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=previousButton, styleClass=button]'Previous', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,925 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=previousButton, styleClass=button]'Previous', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,925 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=previousButton, styleClass=button]'Previous', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,925 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@7d9190fb] on ObjectProperty [bean: Button[id=previousButton, styleClass=button]'Previous', name: skin, value: javafx.scene.control.skin.ButtonSkin@7d9190fb]
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=nextButton, styleClass=button]'Next', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=nextButton, styleClass=button]'Next', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=nextButton, styleClass=button]'Next', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=nextButton, styleClass=button]'Next', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,926 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=nextButton, styleClass=button]'Next', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,927 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@798a2d52] on ObjectProperty [bean: Button[id=nextButton, styleClass=button]'Next', name: skin, value: javafx.scene.control.skin.ButtonSkin@798a2d52]
+2024-03-28 13:23:01,927 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,927 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,927 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=deleteButton, styleClass=button]'Delete', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,928 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=deleteButton, styleClass=button]'Delete', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,928 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=deleteButton, styleClass=button]'Delete', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,928 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=deleteButton, styleClass=button]'Delete', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,928 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=deleteButton, styleClass=button]'Delete', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,929 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@659fdeb] on ObjectProperty [bean: Button[id=deleteButton, styleClass=button]'Delete', name: skin, value: javafx.scene.control.skin.ButtonSkin@659fdeb]
+2024-03-28 13:23:01,930 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,930 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,930 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@7b2ab516] on ObjectProperty [bean: Label@5892b5d5[styleClass=label]'Volume Control', name: skin, value: javafx.scene.control.skin.LabelSkin@7b2ab516]
+2024-03-28 13:23:01,932 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=16.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,933 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=16.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,937 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@959e40d] on ObjectProperty [bean: Label[id=artistLabel, styleClass=label]'', name: skin, value: javafx.scene.control.skin.LabelSkin@959e40d]
+2024-03-28 13:23:01,937 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,937 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,938 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@4bf2f08e] on ObjectProperty [bean: Label[id=albumLabel, styleClass=label]'', name: skin, value: javafx.scene.control.skin.LabelSkin@4bf2f08e]
+2024-03-28 13:23:01,939 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,939 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,941 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@7c83592f] on ObjectProperty [bean: Label[id=generoLabel, styleClass=label]'', name: skin, value: javafx.scene.control.skin.LabelSkin@7c83592f]
+2024-03-28 13:23:01,942 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,942 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,943 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@68267dbf] on ObjectProperty [bean: Label[id=upvoteLabel, styleClass=label]'up-votes:', name: skin, value: javafx.scene.control.skin.LabelSkin@68267dbf]
+2024-03-28 13:23:01,944 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,944 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,945 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@7b743d83] on ObjectProperty [bean: Label[id=downvoteLabel, styleClass=label]'down-votes:', name: skin, value: javafx.scene.control.skin.LabelSkin@7b743d83]
+2024-03-28 13:23:01,945 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,946 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,946 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=communityButton, styleClass=button]'Community Player', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,946 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=communityButton, styleClass=button]'Community Player', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,946 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=communityButton, styleClass=button]'Community Player', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,946 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=communityButton, styleClass=button]'Community Player', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,946 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=communityButton, styleClass=button]'Community Player', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,948 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@e93ef28] on ObjectProperty [bean: Button[id=communityButton, styleClass=button]'Community Player', name: skin, value: javafx.scene.control.skin.ButtonSkin@e93ef28]
+2024-03-28 13:23:01,948 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,948 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,949 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=delayButton, styleClass=button]'<<<', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,949 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=delayButton, styleClass=button]'<<<', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,949 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=delayButton, styleClass=button]'<<<', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,949 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=delayButton, styleClass=button]'<<<', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,949 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=delayButton, styleClass=button]'<<<', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,950 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@11c29e5d] on ObjectProperty [bean: Button[id=delayButton, styleClass=button]'<<<', name: skin, value: javafx.scene.control.skin.ButtonSkin@11c29e5d]
+2024-03-28 13:23:01,950 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,950 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,952 TRACE j.css [JavaFX Application Thread] -fx-region-border, call applyStyle: ObjectProperty [bean: Button[id=advanceButton, styleClass=button]'>>>', name: border, value: null], value =javafx.scene.layout.Border@1282f8e1, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,952 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: Button[id=advanceButton, styleClass=button]'>>>', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,952 TRACE j.css [JavaFX Application Thread] -fx-content-display, call applyStyle: ObjectProperty [bean: Button[id=advanceButton, styleClass=button]'>>>', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,952 TRACE j.css [JavaFX Application Thread] -fx-alignment, call applyStyle: ObjectProperty [bean: Button[id=advanceButton, styleClass=button]'>>>', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,953 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=advanceButton, styleClass=button]'>>>', name: background, value: null], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:01,954 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.ButtonSkin@10d4dcc0] on ObjectProperty [bean: Button[id=advanceButton, styleClass=button]'>>>', name: skin, value: javafx.scene.control.skin.ButtonSkin@10d4dcc0]
+2024-03-28 13:23:01,954 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,955 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,955 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.SliderSkin@5cf11fbc] on ObjectProperty [bean: Slider[id=progressSlider, styleClass=slider], name: skin, value: javafx.scene.control.skin.SliderSkin@5cf11fbc]
+2024-03-28 13:23:01,956 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: StackPane@65fceb73[styleClass=track], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=3.0, right=3.0, bottom=3.0, left=3.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,957 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: StackPane@65fceb73[styleClass=track], name: background, value: null], value =javafx.scene.layout.Background@7c8d89c8, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,957 TRACE j.css [JavaFX Application Thread] -fx-effect, call applyStyle: ObjectProperty [bean: SliderSkin$2@404439d9[styleClass=thumb], name: effect, value: null], value =javafx.scene.effect.DropShadow@4f418246, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,957 TRACE j.css [JavaFX Application Thread] -fx-padding, call applyStyle: ObjectProperty [bean: SliderSkin$2@404439d9[styleClass=thumb], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=7.0, right=7.0, bottom=7.0, left=7.0], originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,957 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: SliderSkin$2@404439d9[styleClass=thumb], name: background, value: null], value =javafx.scene.layout.Background@8d0b00e, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,958 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@4e0ef187] on ObjectProperty [bean: Label[id=upvoteLabel1, styleClass=label]'', name: skin, value: javafx.scene.control.skin.LabelSkin@4e0ef187]
+2024-03-28 13:23:01,959 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,959 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,960 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@6db5e0f1] on ObjectProperty [bean: Label[id=downvoteLabel1, styleClass=label]'', name: skin, value: javafx.scene.control.skin.LabelSkin@6db5e0f1]
+2024-03-28 13:23:01,961 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=GRAY, fill=0x12372aff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,961 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,961 TRACE j.css [JavaFX Application Thread] -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@416accfd[styleClass=label]'Artistas', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,962 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@55c779d1] on ObjectProperty [bean: Label@416accfd[styleClass=label]'Artistas', name: skin, value: javafx.scene.control.skin.LabelSkin@55c779d1]
+2024-03-28 13:23:01,962 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=15.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,962 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=15.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,962 TRACE j.css [JavaFX Application Thread] -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@3f3df95f[styleClass=label]'Bad Bunny', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,964 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@2ca4a336] on ObjectProperty [bean: Label@3f3df95f[styleClass=label]'Bad Bunny', name: skin, value: javafx.scene.control.skin.LabelSkin@2ca4a336]
+2024-03-28 13:23:01,964 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,964 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,964 TRACE j.css [JavaFX Application Thread] -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@330f8553[styleClass=label]'Rels B', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,964 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@5cb39d9c] on ObjectProperty [bean: Label@330f8553[styleClass=label]'Rels B', name: skin, value: javafx.scene.control.skin.LabelSkin@5cb39d9c]
+2024-03-28 13:23:01,965 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,965 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,965 TRACE j.css [JavaFX Application Thread] -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@3462bc19[styleClass=label]'Lista de Canciones', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,965 TRACE j.s.control [JavaFX Application Thread] Stored skin[javafx.scene.control.skin.LabelSkin@50f2700e] on ObjectProperty [bean: Label@3462bc19[styleClass=label]'Lista de Canciones', name: skin, value: javafx.scene.control.skin.LabelSkin@50f2700e]
+2024-03-28 13:23:01,965 TRACE j.css [JavaFX Application Thread] -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,965 TRACE j.css [JavaFX Application Thread] -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+2024-03-28 13:23:01,966 TRACE j.s.layout [JavaFX Application Thread] AnchorPane@18520e8a[styleClass=root] resized to 653.0 x 420.0
+2024-03-28 13:23:01,972 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' resized to 216.0 x 38.4
+2024-03-28 13:23:01,972 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' moved to (228.0,48.0)
+2024-03-28 13:23:01,992 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' resized to 73.6 x 55.2
+2024-03-28 13:23:01,992 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' moved to (175.0,240.0)
+2024-03-28 13:23:01,992 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] resized to 174.4 x 30.4
+2024-03-28 13:23:01,992 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] moved to (441.0,375.0)
+2024-03-28 13:23:01,993 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' resized to 73.6 x 55.2
+2024-03-28 13:23:01,993 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' moved to (256.0,240.0)
+2024-03-28 13:23:01,993 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' resized to 73.6 x 55.2
+2024-03-28 13:23:01,993 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' moved to (340.0,240.0)
+2024-03-28 13:23:01,993 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' resized to 73.6 x 55.2
+2024-03-28 13:23:01,993 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' moved to (423.0,240.0)
+2024-03-28 13:23:01,994 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' resized to 70.4 x 27.2
+2024-03-28 13:23:01,994 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' moved to (300.0,348.0)
+2024-03-28 13:23:01,994 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' resized to 216.0 x 38.4
+2024-03-28 13:23:01,994 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' moved to (421.0,343.0)
+2024-03-28 13:23:01,994 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:01,994 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' moved to (288.0,93.0)
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' moved to (288.0,119.0)
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' moved to (288.0,146.0)
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' moved to (200.0,180.0)
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:01,995 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' moved to (373.0,180.0)
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' resized to 128.0 x 38.4
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' moved to (14.0,364.0)
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' resized to 74.4 x 38.4
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' moved to (244.0,304.0)
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' resized to 74.4 x 38.4
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' moved to (354.0,303.0)
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] resized to 351.2 x 19.2
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] moved to (160.0,221.0)
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:01,996 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' moved to (200.0,200.0)
+2024-03-28 13:23:01,997 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:01,997 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' moved to (373.0,200.0)
+2024-03-28 13:23:01,997 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] resized to 120.0 x 150.4
+2024-03-28 13:23:01,997 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] moved to (18.0,32.0)
+2024-03-28 13:23:01,997 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 resized to 120.0 x 150.4
+2024-03-28 13:23:01,997 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 moved to (18.0,182.0)
+2024-03-28 13:23:01,999 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=19.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (108.0,19.2)
+2024-03-28 13:23:02,001 TRACE j.s.layout [JavaFX Application Thread] Text[text="Play", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (26.4,19.2)
+2024-03-28 13:23:02,001 TRACE j.s.layout [JavaFX Application Thread] SliderSkin$2@65da0275[styleClass=thumb] resized to 14.4 x 14.4
+2024-03-28 13:23:02,002 TRACE j.s.layout [JavaFX Application Thread] StackPane@3889bdd5[styleClass=track] resized to 166.0 x 6.4
+2024-03-28 13:23:02,002 TRACE j.s.layout [JavaFX Application Thread] StackPane@3889bdd5[styleClass=track] moved to (4.0,12.0)
+2024-03-28 13:23:02,002 TRACE j.s.layout [JavaFX Application Thread] Text[text="Stop", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.8,19.2)
+2024-03-28 13:23:02,002 TRACE j.s.layout [JavaFX Application Thread] Text[text="Previous", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (14.4,19.2)
+2024-03-28 13:23:02,002 TRACE j.s.layout [JavaFX Application Thread] Text[text="Next", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.0,19.2)
+2024-03-28 13:23:02,002 TRACE j.s.layout [JavaFX Application Thread] Text[text="Delete", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (18.4,4.8)
+2024-03-28 13:23:02,003 TRACE j.s.layout [JavaFX Application Thread] Text[text="Volume Control", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=16.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (52.0,6.4)
+2024-03-28 13:23:02,003 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,003 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,003 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,003 TRACE j.s.layout [JavaFX Application Thread] Text[text="up-votes:", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (19.2,0.0)
+2024-03-28 13:23:02,003 TRACE j.s.layout [JavaFX Application Thread] Text[text="down-votes:", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (10.4,0.0)
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] Text[text="Community Player", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (16.0,10.4)
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] Text[text="<<<", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.8,10.4)
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] Text[text=">>>", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.8,10.4)
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] SliderSkin$2@404439d9[styleClass=thumb] resized to 14.4 x 14.4
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] StackPane@65fceb73[styleClass=track] resized to 342.0 x 6.4
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] StackPane@65fceb73[styleClass=track] moved to (4.0,6.0)
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,004 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Label@416accfd[styleClass=label]'Artistas' resized to 120.0 x 37.6
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Label@416accfd[styleClass=label]'Artistas' moved to (0.0,0.0)
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Label@3f3df95f[styleClass=label]'Bad Bunny' resized to 56.8 x 17.6
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Label@3f3df95f[styleClass=label]'Bad Bunny' moved to (0.0,37.6)
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Label@330f8553[styleClass=label]'Rels B' resized to 32.0 x 17.6
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Label@330f8553[styleClass=label]'Rels B' moved to (0.0,55.2)
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Text[text="Artistas", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=15.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (35.2,8.0)
+2024-03-28 13:23:02,005 TRACE j.s.layout [JavaFX Application Thread] Text[text="Bad Bunny", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+2024-03-28 13:23:02,007 TRACE j.s.layout [JavaFX Application Thread] Text[text="Rels B", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+2024-03-28 13:23:02,007 TRACE j.s.layout [JavaFX Application Thread] Label@3462bc19[styleClass=label]'Lista de Canciones' resized to 120.0 x 26.4
+2024-03-28 13:23:02,007 TRACE j.s.layout [JavaFX Application Thread] Label@3462bc19[styleClass=label]'Lista de Canciones' moved to (0.0,0.0)
+2024-03-28 13:23:02,007 TRACE j.s.layout [JavaFX Application Thread] Text[text="Lista de Canciones", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (10.4,4.0)
+2024-03-28 13:23:02,009 TRACE j.s.layout [JavaFX Application Thread] AnchorPane@18520e8a[styleClass=root] resized to 653.5999755859375 x 420.0
+2024-03-28 13:23:02,050 DEBUG j.s.focus [JavaFX Application Thread] ReadOnlyBooleanProperty [bean: Button[id=playButton, styleClass=button]'Play', name: focused, value: true] focused=true
+2024-03-28 13:23:02,050 DEBUG j.s.focus [JavaFX Application Thread] ReadOnlyBooleanProperty [bean: Button[id=playButton, styleClass=button]'Play', name: focusWithin, value: true] focusWithin=true
+2024-03-28 13:23:02,050 DEBUG j.s.focus [JavaFX Application Thread] ReadOnlyBooleanProperty [bean: AnchorPane@18520e8a[styleClass=root], name: focusWithin, value: true] focusWithin=true
+2024-03-28 13:23:02,050 DEBUG j.s.focus [JavaFX Application Thread] Changed focus from null to Button[id=playButton, styleClass=button]'Play'
+2024-03-28 13:23:02,052 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: background, value: javafx.scene.layout.Background@3fedc782], value =javafx.scene.layout.Background@bda7a12a, originOfCalculatedValue=INLINE
+2024-03-28 13:23:02,052 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' resized to 216.0 x 38.4
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' moved to (228.0,48.0)
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' resized to 73.6 x 55.2
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' moved to (175.0,240.0)
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] resized to 174.4 x 30.4
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] moved to (441.0,375.0)
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' resized to 73.6 x 55.2
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' moved to (256.0,240.0)
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' resized to 73.6 x 55.2
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' moved to (340.0,240.0)
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' resized to 73.6 x 55.2
+2024-03-28 13:23:02,053 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' moved to (423.0,240.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' resized to 70.4 x 27.2
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' moved to (300.0,348.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' resized to 216.0 x 38.4
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' moved to (421.0,343.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' moved to (288.0,93.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' moved to (288.0,119.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' moved to (288.0,146.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' moved to (200.0,180.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' moved to (373.0,180.0)
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' resized to 128.0 x 38.4
+2024-03-28 13:23:02,054 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' moved to (14.0,364.0)
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' resized to 74.4 x 38.4
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' moved to (244.0,304.0)
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' resized to 74.4 x 38.4
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' moved to (354.0,303.0)
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] resized to 351.2 x 19.2
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] moved to (160.0,221.0)
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' moved to (200.0,200.0)
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,056 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' moved to (373.0,200.0)
+2024-03-28 13:23:02,057 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] resized to 120.0 x 150.4
+2024-03-28 13:23:02,057 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] moved to (18.0,32.0)
+2024-03-28 13:23:02,058 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 resized to 120.0 x 150.4
+2024-03-28 13:23:02,058 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 moved to (18.0,182.0)
+2024-03-28 13:23:02,058 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=19.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (108.0,19.2)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="Play", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (26.4,19.2)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] SliderSkin$2@65da0275[styleClass=thumb] resized to 14.4 x 14.4
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] StackPane@3889bdd5[styleClass=track] resized to 166.0 x 6.4
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] StackPane@3889bdd5[styleClass=track] moved to (4.0,12.0)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="Stop", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.8,19.2)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="Previous", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (14.4,19.2)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="Next", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.0,19.2)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="Delete", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (18.4,4.8)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="Volume Control", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=16.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (52.0,6.4)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,059 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text="up-votes:", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (19.2,0.0)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text="down-votes:", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (10.4,0.0)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text="Community Player", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (16.0,10.4)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text="<<<", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.8,10.4)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text=">>>", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (24.8,10.4)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] SliderSkin$2@404439d9[styleClass=thumb] resized to 14.4 x 14.4
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] StackPane@65fceb73[styleClass=track] resized to 342.0 x 6.4
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] StackPane@65fceb73[styleClass=track] moved to (4.0,6.0)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Text[text="", x=0.0, y=0.0, alignment=CENTER, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold Italic, family=System, style=Bold Italic, size=13.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (48.0,9.6)
+2024-03-28 13:23:02,060 TRACE j.s.layout [JavaFX Application Thread] Label@416accfd[styleClass=label]'Artistas' resized to 120.0 x 37.6
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@416accfd[styleClass=label]'Artistas' moved to (0.0,0.0)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@3f3df95f[styleClass=label]'Bad Bunny' resized to 56.8 x 17.6
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@3f3df95f[styleClass=label]'Bad Bunny' moved to (0.0,37.6)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@330f8553[styleClass=label]'Rels B' resized to 32.0 x 17.6
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@330f8553[styleClass=label]'Rels B' moved to (0.0,55.2)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Text[text="Artistas", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=15.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (35.2,8.0)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Text[text="Bad Bunny", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Text[text="Rels B", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@3462bc19[styleClass=label]'Lista de Canciones' resized to 120.0 x 26.4
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Label@3462bc19[styleClass=label]'Lista de Canciones' moved to (0.0,0.0)
+2024-03-28 13:23:02,061 TRACE j.s.layout [JavaFX Application Thread] Text[text="Lista de Canciones", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (10.4,4.0)
+2024-03-28 13:23:02,091 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' resized to 216.0 x 38.4
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' moved to (228.0,48.0)
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' resized to 73.6 x 55.2
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' moved to (175.0,240.0)
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] resized to 174.4 x 30.4
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] moved to (441.0,375.0)
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' resized to 73.6 x 55.2
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' moved to (256.0,240.0)
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' resized to 73.6 x 55.2
+2024-03-28 13:23:02,092 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' moved to (340.0,240.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' resized to 73.6 x 55.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' moved to (423.0,240.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' resized to 70.4 x 27.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' moved to (300.0,348.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' resized to 216.0 x 38.4
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' moved to (421.0,343.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' moved to (288.0,93.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' moved to (288.0,119.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' moved to (288.0,146.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' moved to (200.0,180.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' moved to (373.0,180.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' resized to 128.0 x 38.4
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' moved to (14.0,364.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' resized to 74.4 x 38.4
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' moved to (244.0,304.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' resized to 74.4 x 38.4
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' moved to (354.0,303.0)
+2024-03-28 13:23:02,093 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] resized to 351.2 x 19.2
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] moved to (160.0,221.0)
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' moved to (200.0,200.0)
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' moved to (373.0,200.0)
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] resized to 120.0 x 150.4
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] moved to (18.0,32.0)
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 resized to 120.0 x 150.4
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 moved to (18.0,182.0)
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] SliderSkin$2@404439d9[styleClass=thumb] resized to 14.4 x 14.4
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] StackPane@65fceb73[styleClass=track] resized to 342.0 x 6.4
+2024-03-28 13:23:02,094 TRACE j.s.layout [JavaFX Application Thread] StackPane@65fceb73[styleClass=track] moved to (4.0,6.0)
+2024-03-28 13:23:03,782 DEBUG j.s.focus [JavaFX Application Thread] ReadOnlyBooleanProperty [bean: Button[id=playButton, styleClass=button]'Play', name: focused, value: false] focused=false
+2024-03-28 13:23:03,782 DEBUG j.s.focus [JavaFX Application Thread] ReadOnlyBooleanProperty [bean: Button[id=playButton, styleClass=button]'Play', name: focusWithin, value: false] focusWithin=false
+2024-03-28 13:23:03,783 DEBUG j.s.focus [JavaFX Application Thread] ReadOnlyBooleanProperty [bean: AnchorPane@18520e8a[styleClass=root], name: focusWithin, value: false] focusWithin=false
+2024-03-28 13:23:03,801 TRACE j.css [JavaFX Application Thread] -fx-region-background, call applyStyle: ObjectProperty [bean: Button[id=playButton, styleClass=button]'Play', name: background, value: javafx.scene.layout.Background@bda7a12a], value =javafx.scene.layout.Background@3fedc782, originOfCalculatedValue=INLINE
+2024-03-28 13:23:03,803 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' resized to 216.0 x 38.4
+2024-03-28 13:23:03,803 TRACE j.s.layout [JavaFX Application Thread] Label[id=songLabel, styleClass=label]'' moved to (228.0,48.0)
+2024-03-28 13:23:03,803 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' resized to 73.6 x 55.2
+2024-03-28 13:23:03,803 TRACE j.s.layout [JavaFX Application Thread] Button[id=playButton, styleClass=button]'Play' moved to (175.0,240.0)
+2024-03-28 13:23:03,804 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] resized to 174.4 x 30.4
+2024-03-28 13:23:03,805 TRACE j.s.layout [JavaFX Application Thread] Slider[id=volumeController, styleClass=slider] moved to (441.0,375.0)
+2024-03-28 13:23:03,805 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' resized to 73.6 x 55.2
+2024-03-28 13:23:03,805 TRACE j.s.layout [JavaFX Application Thread] Button[id=stopButton, styleClass=button]'Stop' moved to (256.0,240.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' resized to 73.6 x 55.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=previousButton, styleClass=button]'Previous' moved to (340.0,240.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' resized to 73.6 x 55.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=nextButton, styleClass=button]'Next' moved to (423.0,240.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' resized to 70.4 x 27.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=deleteButton, styleClass=button]'Delete' moved to (300.0,348.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' resized to 216.0 x 38.4
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label@5892b5d5[styleClass=label]'Volume Control' moved to (421.0,343.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=artistLabel, styleClass=label]'' moved to (288.0,93.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=albumLabel, styleClass=label]'' moved to (288.0,119.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=generoLabel, styleClass=label]'' moved to (288.0,146.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel, styleClass=label]'up-votes:' moved to (200.0,180.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' resized to 95.2 x 19.2
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel, styleClass=label]'down-votes:' moved to (373.0,180.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' resized to 128.0 x 38.4
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=communityButton, styleClass=button]'Community Player' moved to (14.0,364.0)
+2024-03-28 13:23:03,806 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' resized to 74.4 x 38.4
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Button[id=delayButton, styleClass=button]'<<<' moved to (244.0,304.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' resized to 74.4 x 38.4
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Button[id=advanceButton, styleClass=button]'>>>' moved to (354.0,303.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] resized to 351.2 x 19.2
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Slider[id=progressSlider, styleClass=slider] moved to (160.0,221.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Label[id=upvoteLabel1, styleClass=label]'' moved to (200.0,200.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' resized to 95.2 x 19.2
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Label[id=downvoteLabel1, styleClass=label]'' moved to (373.0,200.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] resized to 120.0 x 150.4
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] VBox[id=artistLabelsContainer] moved to (18.0,32.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 resized to 120.0 x 150.4
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] VBox@1862c998 moved to (18.0,182.0)
+2024-03-28 13:23:03,807 TRACE j.s.layout [JavaFX Application Thread] Text[text="Play", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x12372aff] moved to (26.4,19.2)
+2024-03-28 13:23:07,878 DEBUG j.l.Runtime [SIGINT handler] Runtime.exit() called with status: 130
+java.lang.Throwable: Runtime.exit(130)
+	at java.base/java.lang.Shutdown.logRuntimeExit(Shutdown.java:179) ~[?:?]
+	at java.base/java.lang.Shutdown.exit(Shutdown.java:160) ~[?:?]
+	at java.base/java.lang.Terminator$1.handle(Terminator.java:51) ~[?:?]
+	at java.base/jdk.internal.misc.Signal$1.run(Signal.java:218) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-03-28 13:23:07,948 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:07,951 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:07,951 TRACE j.m.mbeanserver [pool-2-thread-1] Send delete notification of object org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:07,951 TRACE j.m.mbeanserver [pool-2-thread-1] JMX.mbean.unregistered org.apache.logging.log4j2:type=26a1ab54
+2024-03-28 13:23:07,953 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:07,954 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:07,954 TRACE j.m.mbeanserver [pool-2-thread-1] Send delete notification of object org.apache.logging.log4j2:component=StatusLogger,type=26a1ab54
+2024-03-28 13:23:07,955 TRACE j.m.mbeanserver [pool-2-thread-1] JMX.mbean.unregistered org.apache.logging.log4j2:type=26a1ab54,component=StatusLogger
+2024-03-28 13:23:07,955 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:07,956 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:07,956 TRACE j.m.mbeanserver [pool-2-thread-1] Send delete notification of object org.apache.logging.log4j2:component=ContextSelector,type=26a1ab54
+2024-03-28 13:23:07,956 TRACE j.m.mbeanserver [pool-2-thread-1] JMX.mbean.unregistered org.apache.logging.log4j2:type=26a1ab54,component=ContextSelector
+2024-03-28 13:23:07,956 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:07,956 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:07,957 TRACE j.m.mbeanserver [pool-2-thread-1] Send delete notification of object org.apache.logging.log4j2:component=Loggers,name=,type=26a1ab54
+2024-03-28 13:23:07,957 TRACE j.m.mbeanserver [pool-2-thread-1] JMX.mbean.unregistered org.apache.logging.log4j2:type=26a1ab54,component=Loggers,name=
+2024-03-28 13:23:07,957 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile
+2024-03-28 13:23:07,957 TRACE j.m.mbeanserver [pool-2-thread-1] name = org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile
+2024-03-28 13:23:07,957 TRACE j.m.mbeanserver [pool-2-thread-1] Send delete notification of object org.apache.logging.log4j2:component=Appenders,name=LogFile,type=26a1ab54
+2024-03-28 13:23:07,957 TRACE j.m.mbeanserver [pool-2-thread-1] JMX.mbean.unregistered org.apache.logging.log4j2:type=26a1ab54,component=Appenders,name=LogFile

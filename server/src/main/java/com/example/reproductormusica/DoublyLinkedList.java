@@ -1,8 +1,13 @@
 package com.example.reproductormusica;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.File;
 
 
 public class DoublyLinkedList {
+
+    private static final Logger logger = LogManager.getLogger(MainSceneController.class);
     Node head;
     Node tail;
     Node current;
@@ -26,7 +31,7 @@ public class DoublyLinkedList {
         Node current = head;
         int index = 1;
         while (current != null) {
-            System.out.println("Song " + index++ + ": " + current.mp3File.getAbsolutePath());
+            logger.info("Song " + index++ + ": " + current.mp3File.getAbsolutePath());
             current = current.next;
         }
     }
@@ -37,13 +42,13 @@ public class DoublyLinkedList {
     public void remove(int index) {
         if (index < 0 || index >= size) {
             // Índice fuera de rango, no se puede eliminar
-            System.out.println("Índice fuera de rango.");
+            logger.info("Índice fuera de rango.");
             return;
         }
 
         // Caso especial: si la lista está vacía
         if (size == 0) {
-            System.out.println("La lista está vacía.");
+            logger.info("La lista está vacía.");
             return;
         }
 
