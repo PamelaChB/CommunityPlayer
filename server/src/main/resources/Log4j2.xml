@@ -8,7 +8,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Root level="TRACE"> <!--TRACE para incluir todos los niveles -->
+        <Root level="TRACE"> <!--"TRACE" hace que se incluyan todos los niveles -->
             <AppenderRef ref="LogFile"/>
         </Root>
     </Loggers>
