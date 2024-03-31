@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30be99ab-283f-4493-8258-b1f9fc38a16a" name="Changes" comment="Se une el log4j2 y la lista circular">
+    <list default="true" id="30be99ab-283f-4493-8258-b1f9fc38a16a" name="Changes" comment="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/CircularSinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/CircularSinglyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/DoublyLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/Log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/Log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/5.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/5.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/com/example/reproductormusica/ScreenPlayerMusic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/com/example/reproductormusica/ScreenPlayerMusic.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/ScreenPlayerMusic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/ScreenPlayerMusic.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,20 +39,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Errores-Log4j-2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pamela Chacón/Desktop/pruebaProyecto/CommunityPlayer&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging Errores-Log4j-2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Pamela Chacón/Desktop/pruebaProyecto/CommunityPlayer",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +70,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711654398872</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones.">
+      <option name="closed" value="true" />
+      <created>1711912192202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711912192202</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se une el log4j2 y la lista circular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se une el log4j2 y la lista circular" />
+    <MESSAGE value="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones." />
   </component>
 </project>
