@@ -19,29 +19,30 @@ public class Song {
     String artist;
     String album;
     String genre;
+    String RefMp3;
     int up_votes = 0;
     int down_votes = 0;
 
-
+    // Constructor
     public Song(File mp3File){
         this.mp3File = mp3File;
         this.title = "";
         this.artist = "";
         this.album = "";
         this.genre = "";
+        this.RefMp3 = "";
     }
-
+    // Setters de los votos de cada cancion
     public void setUp_votes(int num){
         this.up_votes += num;
     }
     public void setDown_votes(int num){
         this.down_votes += num;
     }
-
+    // Getters de los atributos
     public String getTitle(){
         return this.title;
     }
-
     public String getUp_votes(){
         return String.valueOf(this.up_votes);
     }
@@ -51,12 +52,14 @@ public class Song {
     public String getArtist(){
         return this.artist;
     }
-
     public String getAlbum(){return this.album;}
-
     public String getGenre(){
         return this.genre;
     }
+    public String getRef(){
+        return this.RefMp3;
+    }
+    // Funcion para extraer la metadata de cada cancion y guardarla
     public void extractMetadata(){
         try {
             AudioFile audioFile = AudioFileIO.read(mp3File);
@@ -70,12 +73,13 @@ public class Song {
                 this.album = album;
                 genre = tag.getFirst(FieldKey.COMMENT);
                 this.genre = genre;
+                this.RefMp3 = String.valueOf(mp3File);
             }
         } catch (IOException | TagException | org.jaudiotagger.audio.exceptions.ReadOnlyFileException | org.jaudiotagger.audio.exceptions.InvalidAudioFrameException | org.jaudiotagger.audio.exceptions.CannotReadException e) {
             logger.error(e);
         }
     }
-
+    // Funcion que printea la metadata en consola
     public void printMetadata(){
         System.out.println("Nombre: " + this.title);
         System.out.println("Artista: " + this.artist);

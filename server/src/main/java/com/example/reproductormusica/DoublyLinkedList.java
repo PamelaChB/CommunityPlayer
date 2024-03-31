@@ -1,12 +1,11 @@
 package com.example.reproductormusica;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.File;
 
 
 public class DoublyLinkedList {
-
+    // Atributos
     private static final Logger logger = LogManager.getLogger(MainSceneController.class);
     Node head;
     Node tail;
@@ -27,31 +26,22 @@ public class DoublyLinkedList {
             this.size++;
         }
     }
-    public void printListContents() {
-        Node current = head;
-        int index = 1;
-        while (current != null) {
-            logger.info("Song " + index++ + ": " + current.mp3File.getAbsolutePath());
-            current = current.next;
-        }
-    }
+    // Funcion que retorna el tamano de la lista
     public int size() {
         return this.size;
     }
-
+    // Funcion que elimina el contenido de la lista segun el indice dado
     public void remove(int index) {
         if (index < 0 || index >= size) {
-            // Índice fuera de rango, no se puede eliminar
+            // indice fuera de rango, no se puede eliminar
             logger.info("Índice fuera de rango.");
             return;
         }
-
         // Caso especial: si la lista está vacía
         if (size == 0) {
             logger.info("La lista está vacía.");
             return;
         }
-
         // Caso especial: si se está eliminando el primer elemento
         if (index == 0) {
             if (size == 1) {
@@ -78,21 +68,28 @@ public class DoublyLinkedList {
             current.prev.next = current.next;
             current.next.prev = current.prev;
         }
-        size--;
+        size--; // Se resta en uno el tamano de la lista
     }
-
+    // Funcion que retorna el mp3 segun el indice dado
     public File get(int index) {
         Node current = head;
         int currentNumber = 0;
         while (current != null && currentNumber < index) {
             current = current.next;
             currentNumber ++;
-
         }
         if (current == null) {
             return this.head.mp3File;
         }else {
             return current.mp3File;
+        }
+    }
+    public void printListContents() {
+        Node current = head;
+        int index = 1;
+        while (current != null) {
+            logger.info("Song " + index++ + ": " + current.mp3File.getAbsolutePath());
+            current = current.next;
         }
     }
 }
