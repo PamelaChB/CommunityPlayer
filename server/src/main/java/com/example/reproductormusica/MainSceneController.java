@@ -1,13 +1,13 @@
 package com.example.reproductormusica;
 
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
-
 import java.io.File;
 import java.net.URL;
 import java.util.*;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.control.Label;
@@ -23,12 +23,12 @@ import org.apache.logging.log4j.Logger;
 
 public class MainSceneController implements Initializable {
     private static final Logger logger = LogManager.getLogger(MainSceneController.class);
+    private Map<String, Set<String>> artistSongs = new HashMap<>(); // Ref: https://www.w3schools.com/java/java_hashmap.asp
     private Media media;
     private MediaPlayer mediaPlayer;
     private File directory;
     private File[] songs;
     private DoublyLinkedList playlist = new DoublyLinkedList();
-
     private CircularSinglyLinkedList artistList = new CircularSinglyLinkedList();
     private int SongNumber = 0;
     @FXML
@@ -84,7 +84,8 @@ public class MainSceneController implements Initializable {
         } catch (Exception e) {
             logger.error("Error loading media: " + e.getMessage());
         }
-        // Recorre la lista de canciones y extraer el nombre del artista de cada una
+
+        // Recorre la lista de canciones y extrae el nombre del artista de cada una
         for (File file : songs) {
             Song song = new Song(file);
             song.extractMetadata();
@@ -93,74 +94,58 @@ public class MainSceneController implements Initializable {
             logger.info(song);
         }
 
-        // Eliminar duplicados usando HashSet
+        // Eliminar duplicados usando HashSet. Ref: https://www.w3schools.com/java/java_hashset.asp
         HashSet<String> uniqueArtists = new HashSet<>();
 
-        // Recorrer la lista de canciones y extraer el nombre del artista de cada una
+        // Recorre la lista de canciones y extrae el nombre del cantante de cada una.
         for (File file : songs) {
             Song song = new Song(file);
             song.extractMetadata();
             uniqueArtists.add(song.getArtist());
             logger.info(file);
             logger.info(song);
+
+            // Agrega la canción al nombre del cantante en artistSongs
+            Set<String> artistSongsSet = artistSongs.computeIfAbsent(song.getArtist(), k -> new HashSet<>());
+            artistSongsSet.add(song.getTitle());
         }
 
-        // Limpiar la lista enlazada y agregar los elementos únicos al conjunto
+        // Limpia la lista y agrega los elementos únicos al conjunto
         artistList.clear();
         artistList.addAll(uniqueArtists);
-
-        // Imprimir la lista actualizada
         artistList.printList();
 
-        // Crear y agregar un Label para cada artista al VBox
+        // Crea y agrega un Label para cada cantante al VBox
         for (String artist : uniqueArtists) {
             Label artistLabel = new Label(artist);
             artistLabelsContainer.getChildren().add(artistLabel);
             logger.info(artist);
             logger.info(artistLabel);
-        }
-        if (songs != null) {
-            // Crea un HashMap para almacenar las canciones por cada artista
-            HashMap<String, List<String>> artistSongsMap = new HashMap<>();
-            for (File file : songs) {
-                Song song = new Song(file);
-                song.extractMetadata();
-                String artist = song.getArtist();
-                String title = song.getTitle();
 
-                logger.info(file);
-                logger.info(song);
-                logger.info(artist);
-                logger.info(title);
+            // Lee los clicks en los Label de los cantantes
+            artistLabel.setOnMouseClicked(event -> {
+                // Aquí se obtiene el nombre del artista al que se le hizo click
+                String clickedArtist = artistLabel.getText();
 
-                // Si el artista ya está en el mapa, agrega la canción a la lista existente
-                if (artistSongsMap.containsKey(artist)) {
-                    List<String> artistSongs = artistSongsMap.get(artist);
-                    artistSongs.add(title);
+                // Busca y muestra las canciones del cantante clickeado
+                Set<String> songs = artistSongs.get(clickedArtist);
+                if (songs != null) {
+                    //System.out.println("Canciones de " + clickedArtist);
 
-                    logger.info(artistSongs);
+                    // String que almacena todas las canciones de cada cantante
+                    StringBuilder allSongs = new StringBuilder();
 
-                } else {
-                    // Si el artista no está en el mapa, crea una nueva lista de canciones
-                    List<String> artistSongs = new ArrayList<>();
-                    artistSongs.add(title);
-                    artistSongsMap.put(artist, artistSongs);
-
-                    logger.info(artistSongs);
+                    for (String song : songs) {
+                        // Añade cada canción al String y los ecribe con un salto de renglón
+                        allSongs.append(song).append("\n");
+                    }
+                    //System.out.println(allSongs);
+                    //Setea el texto del label songList al String generado anteriormente
+                    songList.setText(allSongs.toString());
                 }
-            }
-
-            // Itera sobre el mapa y muestra los artistas y sus canciones correspondientes
-            for (Map.Entry<String, List<String>> entry : artistSongsMap.entrySet()) {
-                String artist = entry.getKey();
-                List<String> songs = entry.getValue();
-                // Imprime el nombre del artista y la lista de canciones correspondientes
-                logger.info("Artista: " + artist);
-                logger.info("Canciones: " + songs);
-            }
-        } else {
-            logger.info("No se encontraron archivos de música en el directorio.");
+            });
         }
+
         // Controlar el volumen
         volumeController.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
