@@ -8,4 +8,6 @@ module com.example.reproductormusica {
     requires javafx.media;
     exports com.example.reproductormusica;
     requires org.apache.logging.log4j;
+    requires java.prefs;
+    requires ini4j;
 }

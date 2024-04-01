@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30be99ab-283f-4493-8258-b1f9fc38a16a" name="Changes" comment="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ini4j_0_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CommunityPlayer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CommunityPlayer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/DoublyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/2.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/3.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/5.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/5.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/com/example/reproductormusica/ScreenPlayerMusic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/com/example/reproductormusica/ScreenPlayerMusic.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/CircularSinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/CircularSinglyLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/DoublyLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/ScreenPlayerMusic.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/ScreenPlayerMusic.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/Song.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/module-info.class" afterDir="false" />
@@ -22,10 +33,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Errores-Log4j-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,12 +60,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
+    "Application.ServerMain.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging Errores-Log4j-2",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Servidor",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Pamela Chacón/Desktop/pruebaProyecto/CommunityPlayer",
+    "last_opened_file_path": "C:/Users/Pamela Chacón/Desktop/Bibliotecas/ini4j-0.5.4.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -78,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711912192202</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones.">
+      <option name="closed" value="true" />
+      <created>1711913663138</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711913663138</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
