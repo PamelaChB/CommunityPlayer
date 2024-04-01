@@ -66,7 +66,7 @@ public class MainSceneController implements Initializable {
         generateError(); //Genera un error al propio para observarlo en el app.log
 
         // Se le asigna la carpeta donde estan los mp3
-        directory = new File("server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
+        directory = new File("C:\\Users\\fmoreno\\Desktop\\ProyectoDatos1\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
         // Las canciones se guardan en esta variable
         songs = directory.listFiles();
         if(songs != null) {
