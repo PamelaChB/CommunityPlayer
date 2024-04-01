@@ -2,35 +2,101 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="653.0" style="-fx-background-color: FBFADA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.reproductormusica.MainSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="653.0" style="-fx-background-color: FBFADA; -fx-border-width: 222; -fx-border-color: 436850;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.reproductormusica.MainSceneController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="228.0" layoutY="48.0" prefHeight="38.0" prefWidth="216.0" text="Nombre de la Canción" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="songLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="228.0" layoutY="48.0" prefHeight="38.0" prefWidth="216.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Button fx:id="playButton" layoutX="174.0" layoutY="237.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Play" textFill="#12372a">
-      <effect>
-         <Blend />
-      </effect>
+      <Label fx:id="RefLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="228.0" layoutY="20.0" prefHeight="38.0" prefWidth="216.0" text=" " textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="10.0" />
+         </font>
+      </Label>
+      <Button fx:id="playButton" layoutX="175.0" layoutY="240.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Play" textFill="#12372a">
+         <effect>
+            <Blend />
+         </effect>
       </Button>
-      <ProgressBar fx:id="progressBar" layoutX="165.0" layoutY="190.0" prefHeight="18.0" prefWidth="351.0" progress="0.31" />
-      <Slider fx:id="volumeController" layoutX="253.0" layoutY="364.0" max="200.0" prefHeight="30.0" prefWidth="174.0" value="100.0" />
-      <Button fx:id="stopButton" layoutX="262.0" layoutY="237.0" mnemonicParsing="false" onAction="#stopMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Stop" textFill="#12372a" />
-      <Button fx:id="previousButton" layoutX="347.0" layoutY="237.0" mnemonicParsing="false" onAction="#previousMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Previous" textFill="#12372a" />
-      <Button fx:id="nextButton" layoutX="433.0" layoutY="237.0" mnemonicParsing="false" onAction="#nextMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Next" textFill="#12372a" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="233.0" layoutY="332.0" prefHeight="38.0" prefWidth="216.0" text="Volume Control" textAlignment="CENTER" textFill="#12372a">
+      <Slider fx:id="volumeController" layoutX="441.0" layoutY="375.0" max="200.0" prefHeight="30.0" prefWidth="174.0" value="100.0" />
+      <Button fx:id="stopButton" layoutX="256.0" layoutY="240.0" mnemonicParsing="false" onAction="#stopMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Stop" textFill="#12372a" />
+      <Button fx:id="previousButton" layoutX="340.0" layoutY="240.0" mnemonicParsing="false" onAction="#previousMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Previous" textFill="#12372a" />
+      <Button fx:id="nextButton" layoutX="423.0" layoutY="240.0" mnemonicParsing="false" onAction="#nextMedia" prefHeight="55.0" prefWidth="73.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Next" textFill="#12372a" />
+      <Button fx:id="deleteButton" layoutX="300.0" layoutY="348.0" mnemonicParsing="false" onAction="#deleteMedia" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Delete" textFill="#12372a" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="421.0" layoutY="343.0" prefHeight="38.0" prefWidth="216.0" text="Volume Control" textAlignment="CENTER" textFill="#12372a">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="165.0" layoutY="123.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="SIMÓN" textFill="#12372a" />
-      <Button layoutX="368.0" layoutY="123.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="NOPE" textFill="#12372a" />
+      <Label fx:id="artistLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="288.0" layoutY="93.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="albumLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="288.0" layoutY="119.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="generoLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="288.0" layoutY="146.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="upvoteLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="200.0" layoutY="180.0" prefHeight="18.0" prefWidth="95.0" text="up-votes:" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="downvoteLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="373.0" layoutY="180.0" prefHeight="18.0" prefWidth="95.0" text="down-votes:" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="communityButton" layoutX="14.0" layoutY="364.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Community Player" textFill="#12372a">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="delayButton" layoutX="244.0" layoutY="304.0" mnemonicParsing="false" onAction="#delayMedia" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="&lt;&lt;&lt;" textFill="#12372a" />
+      <Button fx:id="advanceButton" layoutX="354.0" layoutY="303.0" mnemonicParsing="false" onAction="#advanceMedia" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="&gt;&gt;&gt;" textFill="#12372a" />
+      <Slider fx:id="progressSlider" layoutX="160.0" layoutY="221.0" prefHeight="19.0" prefWidth="351.0" />
+      <Label fx:id="upvoteLabel1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="200.0" layoutY="200.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="downvoteLabel1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="373.0" layoutY="200.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <VBox fx:id="artistLabelsContainer" layoutX="18.0" layoutY="32.0" prefHeight="150.0" prefWidth="120.0" xmlns:fx="http://javafx.com/fxml">
+         <children>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="120.0" text="Artistas">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="17.0" layoutY="197.0" prefHeight="26.0" prefWidth="122.0" text="Lista de Canciones">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="songList" alignment="TOP_LEFT" layoutX="14.0" layoutY="223.0" prefHeight="134.0" prefWidth="128.0" />
+      <Label alignment="CENTER" layoutX="460.0" layoutY="4.0" prefHeight="55.0" prefWidth="190.0" text="Thiscrapify">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
