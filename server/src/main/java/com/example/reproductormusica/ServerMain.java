@@ -2,13 +2,14 @@ package com.example.reproductormusica;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import org.ini4j.Ini;
+import org.ini4j.IniPreferences;
+
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.prefs.Preferences;
 
 public class ServerMain extends Application {
 
@@ -18,9 +19,18 @@ public class ServerMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         new Thread(() -> {
             try {
-                ServerSocket serverSocket = new ServerSocket(12345); // Puerto a escuchar
+                int port=0;
+                try {
+                    File fileToParse = new File("conf.ini");
+                    Ini ini = new Ini(fileToParse);
+                    Preferences prefs = new IniPreferences(ini);
+                    port = Integer.parseInt(prefs.node("Configuration").get("Port","Port"));
+                }catch (Exception ignored){
+                }
 
-                System.out.println("Servidor iniciado. Esperando conexiones...");
+                ServerSocket serverSocket = new ServerSocket(port); // Puerto a escuchar
+
+                System.out.println("Servidor iniciado en puerto:"+port+". Esperando conexiones...");
 
                 while (true) {
                     try {
