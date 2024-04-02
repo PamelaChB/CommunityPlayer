@@ -21,18 +21,18 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         new Thread(() -> {
             try {
-                int port=0;
+                int port = 0;
                 try {
                     File fileToParse = new File("conf.ini");
                     Ini ini = new Ini(fileToParse);
                     Preferences prefs = new IniPreferences(ini);
-                    port = Integer.parseInt(prefs.node("Configuration").get("Port","Port"));
-                }catch (Exception ignored){
+                    port = Integer.parseInt(prefs.node("Configuration").get("Port", "Port"));
+                } catch (Exception ignored) {
                 }
 
                 ServerSocket serverSocket = new ServerSocket(port); // Puerto a escuchar
 
-                System.out.println("Servidor iniciado en puerto:"+port+". Esperando conexiones...");
+                System.out.println("Servidor iniciado en puerto:" + port + ". Esperando conexiones...");
 
                 while (true) {
                     try {
@@ -43,8 +43,16 @@ public class HelloApplication extends Application {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                         String signal = reader.readLine();
                         System.out.println("Señal recibida del cliente: " + signal);
-                        System.out.println("senal enviada");
-                        enviarMsg("hola");
+
+                        // Manejar la señal recibida
+                        if (signal.equals("upvote")) {
+                            handleUpVote();
+                        } else if (signal.equals("downvote")) {
+                            handleDownVote();
+                        }
+
+                        // Envía una confirmación al cliente
+                        enviarMsg("Señal recibida: " + signal);
                     } catch (SocketException e) {
                         System.out.println("Excepción de Socket: " + e.getMessage());
                     }
@@ -71,6 +79,18 @@ public class HelloApplication extends Application {
         } catch (IOException e) {
             System.out.println("Error al enviar mensaje al cliente: " + e.getMessage());
         }
+    }
+
+    // Método para manejar el up-vote recibido
+    private void handleUpVote() {
+        System.out.println("Se recibió un up-vote");
+        // Aquí puedes agregar la lógica para manejar el up-vote
+    }
+
+    // Método para manejar el down-vote recibido
+    private void handleDownVote() {
+        System.out.println("Se recibió un down-vote");
+        // Aquí puedes agregar la lógica para manejar el down-vote
     }
 
     public static void main(String[] args) {
