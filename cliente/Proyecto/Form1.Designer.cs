@@ -19,7 +19,7 @@ namespace Proyecto
         private void InitializeComponent()
         {
             var parser = new FileIniDataParser();
-            this.data = parser.ReadFile("C:\\Users\\fmoreno\\source\\repos\\Proyecto\\config.ini");
+            this.data = parser.ReadFile(".\\config.ini");
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

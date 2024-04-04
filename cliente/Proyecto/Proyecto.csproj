@@ -13,4 +13,10 @@
     <PackageReference Include="IniParser" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
