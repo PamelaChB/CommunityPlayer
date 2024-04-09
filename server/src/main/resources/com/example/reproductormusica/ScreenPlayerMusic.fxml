@@ -60,7 +60,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="communityButton" layoutX="14.0" layoutY="364.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Community Player" textFill="#12372a">
+      <Button fx:id="communityButton" layoutX="14.0" layoutY="364.0"  mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Community Player" textFill="#12372a" onAction="#Servidor">
          <effect>
             <Blend />
          </effect>

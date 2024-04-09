@@ -3,9 +3,14 @@ package com.example.reproductormusica;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 
-import java.io.File;
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
 import java.net.URL;
 import java.util.*;
+import java.util.prefs.Preferences;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
@@ -16,11 +21,18 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.animation.Timeline;
 import javafx.animation.KeyFrame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.ini4j.Ini;
+import org.ini4j.IniPreferences;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+import java.util.prefs.Preferences;
 
 public class MainSceneController implements Initializable {
     private static final Logger logger = LogManager.getLogger(MainSceneController.class);
@@ -56,9 +68,71 @@ public class MainSceneController implements Initializable {
     private Label songList;
     @FXML
     private VBox artistLabelsContainer;
+    private Socket clientSocket; // Campo para almacenar el socket del cliente
+    Thread serverThread = new Thread(() -> {
+        try {
+            int port = 0;
+            String libraryPath = null; // Variable para almacenar la ruta de la biblioteca musical
+
+            try {
+                File fileToParse = new File("conf.ini");
+                Ini ini = new Ini(fileToParse);
+                Preferences prefs = new IniPreferences(ini);
+                port = Integer.parseInt(prefs.node("Configuration").get("Port", "8080"));
+                libraryPath = prefs.node("Configuration").get("LibraryPath", null);
+
+                if (libraryPath != null) {
+                    libraryPath = libraryPath.replace("\\", File.separator);
+                }
+
+            } catch (Exception e) {
+                // Manejar la excepción adecuadamente
+                System.out.println("Error al leer la configuración: " + e.getMessage());
+            }
+
+            if (libraryPath == null) {
+                // Manejar el caso en que la ruta de la biblioteca no esté configurada
+                System.out.println("La ruta de la biblioteca musical no está configurada. Esperando conexiones...");
+            } else {
+                // Utilizar la ruta de la biblioteca musical según sea necesario
+                System.out.println("Servidor iniciado en puerto:" + port + ". Ruta de la biblioteca musical:" + libraryPath + ". Esperando conexiones...");
+            }
+
+
+            ServerSocket serverSocket = new ServerSocket(port); // Puerto a escuchar
+
+
+            while (true) {
+                try {
+                    clientSocket = serverSocket.accept(); // Almacenar el socket del cliente
+                    System.out.println("¡Conexión establecida con: " + clientSocket.getInetAddress().getHostAddress() + "!");
+
+                    // Leer la señal enviada por el cliente
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                    String signal = reader.readLine();
+                    System.out.println("Señal recibida del cliente: " + signal);
+
+                    // Manejar la señal recibida
+                    if (signal.equals("upvote")) {
+                        handleUpVote();
+                    } else if (signal.equals("downvote")) {
+                        handleDownVote();
+                    }
+
+                    // Envía una confirmación al cliente
+                    enviarMsg("Señal recibida: " + signal);
+                } catch (SocketException e) {
+                    System.out.println("Excepción de Socket: " + e.getMessage());
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    });
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
         System.setProperty("log4j.configurationFile", "./server/src/main/resources/log4j2.xml");
         logger.info("Prueba de escritura de errores");
@@ -66,7 +140,7 @@ public class MainSceneController implements Initializable {
         generateError(); //Genera un error al propio para observarlo en el app.log
 
         // Se le asigna la carpeta donde estan los mp3
-        directory = new File("server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
+        directory = new File("C:\\Users\\fmoreno\\source\\repos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
         // Las canciones se guardan en esta variable
         songs = directory.listFiles();
         if(songs != null) {
@@ -187,6 +261,38 @@ public class MainSceneController implements Initializable {
                 mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
             }
         });
+    }
+    // Método para enviar mensaje al cliente
+    public void enviarMsg(String mensaje) {
+        try {
+            OutputStream outputStream = clientSocket.getOutputStream();
+            outputStream.write(mensaje.getBytes());
+            outputStream.flush(); // Forzar el envío del mensaje
+            System.out.println("Mensaje enviado al cliente: " + mensaje);
+        } catch (IOException e) {
+            System.out.println("Error al enviar mensaje al cliente: " + e.getMessage());
+        }
+    }
+
+    // Método para manejar el up-vote recibido
+    private void handleUpVote() {
+        File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
+        Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
+        song.setUp_votes(1);
+        upvoteLabel1.setText(song.getUp_votes());
+        System.out.println("Se recibió un up-vote");
+        // Aquí puedes agregar la lógica para manejar el up-vote
+    }
+
+    // Método para manejar el down-vote recibido
+    private void handleDownVote() {
+        System.out.println("Se recibió un down-vote");
+        File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
+        Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
+        song.setDown_votes(1);
+        downvoteLabel1.setText(song.getDown_votes());
+        System.out.println("Se recibió un up-vote");
+        // Aquí puedes agregar la lógica para manejar el down-vote
     }
     private void generateError() {
         try {
@@ -440,19 +546,19 @@ public class MainSceneController implements Initializable {
         }
     }
     public void delayMedia(){
-            // Se obtiene el tiempo actual actual de reproduccion
-            Duration currentDuration = mediaPlayer.getCurrentTime();
+        // Se obtiene el tiempo actual actual de reproduccion
+        Duration currentDuration = mediaPlayer.getCurrentTime();
 
-            // Se restan 5 segundos desde el tiempo actual
-            Duration newDuration = currentDuration.subtract(Duration.seconds(5));
+        // Se restan 5 segundos desde el tiempo actual
+        Duration newDuration = currentDuration.subtract(Duration.seconds(5));
 
-            // Se asegura de que no se exceda del principio de la cancion
-            if (newDuration.greaterThanOrEqualTo(Duration.ZERO)) {
-                mediaPlayer.seek(newDuration);
-            } else {
-                // Si se excede del principio, simplemente se lleva al inicio de la cancion
-                mediaPlayer.seek(Duration.ZERO);
-            }
+        // Se asegura de que no se exceda del principio de la cancion
+        if (newDuration.greaterThanOrEqualTo(Duration.ZERO)) {
+            mediaPlayer.seek(newDuration);
+        } else {
+            // Si se excede del principio, simplemente se lleva al inicio de la cancion
+            mediaPlayer.seek(Duration.ZERO);
+        }
     }
     // Funcion que se le asigna al boton de eliminar la cancion
     public void deleteMedia(){
@@ -460,5 +566,9 @@ public class MainSceneController implements Initializable {
         playlist.remove(SongNumber); // Se remueve la cancion actual de la lista doblemente enlazada
         SongNumber--; // Se reduce en uno el songnumber
         nextMedia(); // Se reproduce la cancion siguiente \
+    }
+
+    public void Servidor(){
+        serverThread.start(); // Inicia el hilo del servidor
     }
 }
