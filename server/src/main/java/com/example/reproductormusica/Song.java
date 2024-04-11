@@ -4,11 +4,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
+import org.jaudiotagger.audio.exceptions.CannotReadException;
+import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
+import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class Song {
 
@@ -59,6 +66,9 @@ public class Song {
     public String getRef(){
         return this.RefMp3;
     }
+
+
+
     // Funcion para extraer la metadata de cada cancion y guardarla
     public void extractMetadata(){
         try {
@@ -74,8 +84,9 @@ public class Song {
                 genre = tag.getFirst(FieldKey.COMMENT);
                 this.genre = genre;
                 this.RefMp3 = String.valueOf(mp3File);
+
             }
-        } catch (IOException | TagException | org.jaudiotagger.audio.exceptions.ReadOnlyFileException | org.jaudiotagger.audio.exceptions.InvalidAudioFrameException | org.jaudiotagger.audio.exceptions.CannotReadException e) {
+        } catch (IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException | CannotReadException e) {
             logger.error(e);
         }
     }
