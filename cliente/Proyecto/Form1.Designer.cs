@@ -1,13 +1,9 @@
-﻿using System;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text;
-using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
-using Karambolo.Extensions.Logging.File;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Proyecto.logging;
 
 namespace Proyecto
 {
@@ -27,10 +23,14 @@ namespace Proyecto
         {
             _loggerFactory = LoggerFactory.Create(builder =>
             {
-                builder
-                    .AddConsole()
-                    .AddProvider(new FileLoggerProvider(Options.Create(new FileLoggerOptions())));
+                builder.AddConsole();                    
             });
+
+            string workingDirectory = Environment.CurrentDirectory; 
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+            string projectRootDirectory = Directory.GetParent(projectDirectory).FullName;
+
+            _loggerFactory.AddFile(Path.Combine(projectRootDirectory, "logs"));
 
             _logger = _loggerFactory.CreateLogger<Form1>();
 
