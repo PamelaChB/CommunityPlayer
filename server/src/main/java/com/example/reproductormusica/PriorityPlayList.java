@@ -11,7 +11,6 @@ public class PriorityPlayList implements PriorityQueue {
     private String GuidId;
     private int priority;
 
-
     public PriorityPlayList() {
         front = null;
         rear = null;
@@ -116,6 +115,125 @@ public class PriorityPlayList implements PriorityQueue {
             return current.priority;
         }else{
             return -1;
+        }
+    }
+    public String getGuidId(int index){
+        if(index < 0 || index >= size){
+            return "error";
+        }
+        NodePriority current = front;
+        int currentIndex = 0;
+        while(current != null && currentIndex < index){
+            current = current.next;
+            currentIndex++;
+        }
+        if(current != null){
+            return current.Guid;
+        }else{
+            return "error";
+        }
+    }
+    public void setUpVotes(int index){
+        if(index < 0 || index >= size){
+        }
+        NodePriority current = front;
+        int currentIndex = 0;
+        while(current != null && currentIndex < index){
+            current = current.next;
+            currentIndex++;
+        }
+        if(current != null){
+            current.UpVotes++;
+        }
+        priority++;
+    }
+    public void setDownVotes(int index){
+        if(index < 0 || index >= size){
+        }
+        NodePriority current = front;
+        int currentIndex = 0;
+        while(current != null && currentIndex < index){
+            current = current.next;
+            currentIndex++;
+        }
+        if(current != null){
+            current.DownVotes++;
+        }
+        priority--;
+    }
+    public int getUpVotes(int index){
+        if(index < 0 || index >= size){
+            return -1;
+        }
+        NodePriority current = front;
+        int currentIndex = 0;
+        while(current != null && currentIndex < index){
+            current = current.next;
+            currentIndex++;
+        }
+        if(current != null){
+            return current.UpVotes;
+        }else{
+            return -1;
+        }
+    }
+    public int getDownVotes(int index){
+        if(index < 0 || index >= size){
+            return -1;
+        }
+        NodePriority current = front;
+        int currentIndex = 0;
+        while(current != null && currentIndex < index){
+            current = current.next;
+            currentIndex++;
+        }
+        if(current != null){
+            return current.DownVotes;
+        }else{
+            return -1;
+        }
+    }
+    public void updatePriorityOrder() {
+        if (size <= 1) {
+            // No es necesario actualizar si la lista tiene 0 o 1 elemento
+            return;
+        }
+
+        NodePriority current = front.next; // Empezamos desde el segundo nodo
+        NodePriority prev = front;
+
+        while (current != null) {
+            NodePriority nextNode = current.next; // Guardamos el siguiente nodo antes de reordenar
+
+            // Si la prioridad del nodo actual es menor que la del nodo anterior,
+            // necesitamos reorganizarlo
+            if (current.priority < prev.priority) {
+                // Eliminamos el nodo actual de su posición
+                prev.next = current.next;
+
+                // Insertamos el nodo actual en la posición correcta
+                NodePriority temp = front;
+                NodePriority prevTemp = null;
+                while (temp != null && temp.priority <= current.priority) {
+                    prevTemp = temp;
+                    temp = temp.next;
+                }
+                if (prevTemp == null) {
+                    // Si el nodo actual tiene la prioridad más baja, se convierte en el nuevo frente
+                    current.next = front;
+                    front = current;
+                } else {
+                    // Insertamos el nodo actual entre prevTemp y temp
+                    prevTemp.next = current;
+                    current.next = temp;
+                }
+            } else {
+                // No es necesario reorganizar este nodo, avanzamos
+                prev = current;
+            }
+
+            // Avanzamos al siguiente nodo
+            current = nextNode;
         }
     }
 }
