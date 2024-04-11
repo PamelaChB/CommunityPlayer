@@ -1,5 +1,6 @@
 package com.example.reproductormusica;
 
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import java.util.Random;
@@ -80,7 +81,7 @@ public class MainSceneController implements Initializable {
             String libraryPath = null; // Variable para almacenar la ruta de la biblioteca musical
 
             try {
-                File fileToParse = new File("conf.ini");
+                File fileToParse = new File("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\conf.ini");
                 Ini ini = new Ini(fileToParse);
                 Preferences prefs = new IniPreferences(ini);
                 port = Integer.parseInt(prefs.node("Configuration").get("Port", "8080"));
@@ -118,14 +119,14 @@ public class MainSceneController implements Initializable {
                     System.out.println("Señal recibida del cliente: " + signal);
 
                     // Manejar la señal recibida
-                    if (signal.equals("upvote")) {
-                        handleUpVote();
-                    } else if (signal.equals("downvote")) {
-                        handleDownVote();
+                    if (signal.equals("vote:up")) {
+                        this.handleUpVote();
+                    } else if (signal.equals("vote:down")) {
+                        this.handleDownVote();
                     }
 
                     // Envía una confirmación al cliente
-                    enviarMsg("Señal recibida: " + signal);
+                    this.enviarMsg("Señal recibida: " + signal);
                 } catch (SocketException e) {
                     System.out.println("Excepción de Socket: " + e.getMessage());
                 }
@@ -146,7 +147,7 @@ public class MainSceneController implements Initializable {
 
 
         // Se le asigna la carpeta donde estan los mp3
-        directory = new File("./server/src/main/java/com/example/reproductormusica/mp3");
+        directory = new File("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
         // Las canciones se guardan en esta variable
         songs = directory.listFiles();
         if(songs != null) {
@@ -185,8 +186,8 @@ public class MainSceneController implements Initializable {
         for (int i = 0; i < 10; i++) {
             int RandomSong = random.nextInt(6);
             File song = songs[RandomSong];
-            int upVotes = random.nextInt(100); // Votos aleatorios
-            int downVotes = random.nextInt(50); // Votos aleatorios
+            int upVotes = CommunityPlaylist.getUpVotes(SongNumberCommunity); // Votos aleatorios
+            int downVotes = CommunityPlaylist.getDownVotes(SongNumberCommunity);; // Votos aleatorios
             CommunityPlaylist.enqueue(song, upVotes - downVotes);
         }
 
@@ -290,24 +291,25 @@ public class MainSceneController implements Initializable {
     }
 
     // Método para manejar el up-vote recibido
-    private void handleUpVote() {
-        File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
-        Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
-        song.setUp_votes(1);
-        upvoteLabel1.setText(song.getUp_votes());
+    public void handleUpVote() {
+        Platform.runLater(() -> {
+            CommunityPlaylist.setUpVotes(SongNumberCommunity);
+            CommunityPlaylist.updatePriorityOrder();
+            upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+            System.out.println(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+        });
         System.out.println("Se recibió un up-vote");
-        // Aquí puedes agregar la lógica para manejar el up-vote
     }
 
     // Método para manejar el down-vote recibido
-    private void handleDownVote() {
+    public void handleDownVote() {
+        Platform.runLater(() -> {
+            CommunityPlaylist.setDownVotes(SongNumberCommunity);
+            CommunityPlaylist.updatePriorityOrder();
+            downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
+            System.out.println(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
+        });
         System.out.println("Se recibió un down-vote");
-        File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
-        Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
-        song.setDown_votes(1);
-        downvoteLabel1.setText(song.getDown_votes());
-        System.out.println("Se recibió un up-vote");
-        // Aquí puedes agregar la lógica para manejar el down-vote
     }
     private void generateError() {
         try {
@@ -335,6 +337,7 @@ public class MainSceneController implements Initializable {
             RefLabel.setText((song.getRef()));
             mediaPlayer.play();
         }else{
+            System.out.println(CommunityPlaylist.getGuidId(SongNumberCommunity));
             mediaPlayer1.play();
             File mp3 = CommunityPlaylist.getSong(SongNumberCommunity);
             Song song = new Song(mp3);
@@ -343,8 +346,8 @@ public class MainSceneController implements Initializable {
             songLabel.setText(song.getTitle());
             albumLabel.setText(song.getAlbum());
             generoLabel.setText(song.getGenre());
-            upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getPriority(SongNumberCommunity)));
-            downvoteLabel1.setText(song.getDown_votes());
+            upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+            downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
             RefLabel.setText((song.getRef()));
             }
 
@@ -424,8 +427,8 @@ public class MainSceneController implements Initializable {
                 songLabel.setText(song.getTitle());
                 albumLabel.setText(song.getAlbum());
                 generoLabel.setText(song.getGenre());
-                upvoteLabel1.setText(song.getUp_votes());
-                downvoteLabel1.setText(song.getDown_votes());
+                upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+                downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
                 RefLabel.setText((song.getRef()));
                 mediaPlayer.play();
                 // Controlador de volumen
@@ -466,7 +469,7 @@ public class MainSceneController implements Initializable {
             if(SongNumberCommunity>0){
                 SongNumberCommunity--; // Se disminuye en uno, el valor actual de la variable
                 mediaPlayer1.stop(); // Se para el reproductor actual
-                media1 = new Media(playlist.get(SongNumberCommunity).toURI().toString()); // Se guarda el nuevo media con la cancion actual
+                media1 = new Media(CommunityPlaylist.getSong(SongNumberCommunity).toURI().toString()); // Se guarda el nuevo media con la cancion actual
                 mediaPlayer1 = new MediaPlayer(media1); // Se crea el mediaplayer nuevo
                 File mp3 = CommunityPlaylist.getSong(SongNumberCommunity); // Se guarda la cancion actual en una variable
                 Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
@@ -476,8 +479,8 @@ public class MainSceneController implements Initializable {
                 songLabel.setText(song.getTitle());
                 albumLabel.setText(song.getAlbum());
                 generoLabel.setText(song.getGenre());
-                upvoteLabel1.setText(song.getUp_votes());
-                downvoteLabel1.setText(song.getDown_votes());
+                upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+                downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
                 RefLabel.setText((song.getRef()));
                 mediaPlayer1.play();
                 // Controlador de volumen
@@ -525,8 +528,8 @@ public class MainSceneController implements Initializable {
                 songLabel.setText(song.getTitle());
                 albumLabel.setText(song.getAlbum());
                 generoLabel.setText(song.getGenre());
-                upvoteLabel1.setText(song.getUp_votes());
-                downvoteLabel1.setText(song.getDown_votes());
+                upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+                downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
                 RefLabel.setText((song.getRef()));
                 mediaPlayer1.play();
                 // Controlador de volumen
@@ -680,8 +683,8 @@ public class MainSceneController implements Initializable {
                 songLabel.setText(song.getTitle());
                 albumLabel.setText(song.getAlbum());
                 generoLabel.setText(song.getGenre());
-                upvoteLabel1.setText(song.getUp_votes());
-                downvoteLabel1.setText(song.getDown_votes());
+                upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+                downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
                 RefLabel.setText((song.getRef()));
                 mediaPlayer1.play();
                 // Controlador de volumen
@@ -729,8 +732,8 @@ public class MainSceneController implements Initializable {
                 songLabel.setText(song.getTitle());
                 albumLabel.setText(song.getAlbum());
                 generoLabel.setText(song.getGenre());
-                upvoteLabel1.setText(song.getUp_votes());
-                downvoteLabel1.setText(song.getDown_votes());
+                upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getUpVotes(SongNumberCommunity)));
+                downvoteLabel1.setText(String.valueOf(CommunityPlaylist.getDownVotes(SongNumberCommunity)));
                 RefLabel.setText((song.getRef()));
                 mediaPlayer1.play();
                 // Controlador de volumen

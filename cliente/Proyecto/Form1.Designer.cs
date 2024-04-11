@@ -35,7 +35,7 @@ namespace Proyecto
             _logger = _loggerFactory.CreateLogger<Form1>();
 
             var parser = new FileIniDataParser();
-            this.data = parser.ReadFile(".\\config.ini");
+            this.data = parser.ReadFile("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\config.ini");
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
