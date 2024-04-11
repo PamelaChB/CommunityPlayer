@@ -4,6 +4,10 @@ using System.Text;
 using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
+using Karambolo.Extensions.Logging.File;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Proyecto
 {
@@ -16,8 +20,20 @@ namespace Proyecto
         private System.Windows.Forms.Label label1;
         private TcpClient client;
 
+        private ILoggerFactory _loggerFactory;
+        private ILogger _logger;
+
         private void InitializeComponent()
         {
+            _loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder
+                    .AddConsole()
+                    .AddProvider(new FileLoggerProvider(Options.Create(new FileLoggerOptions())));
+            });
+
+            _logger = _loggerFactory.CreateLogger<Form1>();
+
             var parser = new FileIniDataParser();
             this.data = parser.ReadFile(".\\config.ini");
             this.components = new System.ComponentModel.Container();
@@ -47,12 +63,6 @@ namespace Proyecto
             this.label1.Size = new System.Drawing.Size(250, 50);
             this.label1.Text = "";
             this.Controls.Add(this.label1);
-
-            // TextBox
-            //this.textBox1 = new System.Windows.Forms.TextBox();
-            //this.textBox1.Location = new System.Drawing.Point(100, 50);
-            //this.textBox1.Size = new System.Drawing.Size(250, 25);
-            //this.Controls.Add(this.textBox1);
         }
 
         private void btnUpVote_Click(object sender, EventArgs e)
@@ -62,8 +72,8 @@ namespace Proyecto
 
             SendVote("up", puertoEscucha);
 
-            // Imprimir el puerto en consola
-            Console.WriteLine("Hello, World! My port is: " + puertoEscucha);
+            // Utilizar el logger para registrar mensajes
+            _logger.LogInformation("Hello, World! My port is: " + puertoEscucha);
         }
 
         private void btnDownVote_Click(object sender, EventArgs e)
@@ -73,8 +83,8 @@ namespace Proyecto
 
             SendVote("down", puertoEscucha);
 
-            // Imprimir el puerto en consola
-            Console.WriteLine("Hello, World! My port is: " + puertoEscucha);
+            // Utilizar el logger para registrar mensajes
+            _logger.LogInformation("Hello, World! My port is: " + puertoEscucha);
         }
 
         private void SendVote(string vote, string puertoEscucha)
@@ -105,9 +115,10 @@ namespace Proyecto
             }
             catch (Exception ex)
             {
+                // Utilizar el logger para registrar errores
+                _logger.LogError("Error al enviar datos al servidor: " + ex.Message);
                 MessageBox.Show("Error al enviar datos al servidor: " + ex.Message);
             }
         }
-
     }
 }
