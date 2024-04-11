@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30be99ab-283f-4493-8258-b1f9fc38a16a" name="Changes" comment="Se adjuntan partes faltantes relacionadas al .Ini">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/NodePriority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/PriorityPlayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/PriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/4.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/mp3/5.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController.class" afterDir="false" />
+    <list default="true" id="30be99ab-283f-4493-8258-b1f9fc38a16a" name="Changes" comment="PriorityQueue">
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/MainSceneController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/com/example/reproductormusica/Song.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712007619192</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="PriorityQueue">
+      <option name="closed" value="true" />
+      <created>1712795580457</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712795580457</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,17 +138,7 @@
     <MESSAGE value="Se une el log4j2 y la lista circular" />
     <MESSAGE value="Se corrigen errores y se termina de mostrar en pantalla la lista de canciones." />
     <MESSAGE value="Se adjuntan partes faltantes relacionadas al .Ini" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se adjuntan partes faltantes relacionadas al .Ini" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/com/example/reproductormusica/MainSceneController.java</url>
-          <line>175</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="PriorityQueue" />
+    <option name="LAST_COMMIT_MESSAGE" value="PriorityQueue" />
   </component>
 </project>
