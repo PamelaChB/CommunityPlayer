@@ -2,7 +2,7 @@ package com.example.reproductormusica;
 
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
-
+import java.util.Random;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -39,11 +39,16 @@ public class MainSceneController implements Initializable {
     private Map<String, Set<String>> artistSongs = new HashMap<>(); // Ref: https://www.w3schools.com/java/java_hashmap.asp
     private Media media;
     private MediaPlayer mediaPlayer;
+    private Media media1;
+    private MediaPlayer mediaPlayer1;
     private File directory;
     private File[] songs;
     private DoublyLinkedList playlist = new DoublyLinkedList();
+    private PriorityPlayList CommunityPlaylist = new PriorityPlayList();
     private CircularSinglyLinkedList artistList = new CircularSinglyLinkedList();
+    private boolean Server = false;
     private int SongNumber = 0;
+    private int SongNumberCommunity = 0;
     @FXML
     private Label artistLabel;
     @FXML
@@ -139,8 +144,9 @@ public class MainSceneController implements Initializable {
 
         generateError(); //Genera un error al propio para observarlo en el app.log
 
+
         // Se le asigna la carpeta donde estan los mp3
-        directory = new File("C:\\Users\\fmoreno\\source\\repos\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
+        directory = new File("./server/src/main/java/com/example/reproductormusica/mp3");
         // Las canciones se guardan en esta variable
         songs = directory.listFiles();
         if(songs != null) {
@@ -173,6 +179,15 @@ public class MainSceneController implements Initializable {
             artistList.insertLast(song.getArtist());
             logger.info(file);
             logger.info(song);
+        }
+
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int RandomSong = random.nextInt(6);
+            File song = songs[RandomSong];
+            int upVotes = random.nextInt(100); // Votos aleatorios
+            int downVotes = random.nextInt(50); // Votos aleatorios
+            CommunityPlaylist.enqueue(song, upVotes - downVotes);
         }
 
         // Elimina duplicados usando HashSet. Ref: https://www.w3schools.com/java/java_hashset.asp
@@ -306,32 +321,7 @@ public class MainSceneController implements Initializable {
     // Funcion que se le asigna al boton de reproducir
     @FXML
     public void playMedia() {
-        File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
-        Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
-        song.extractMetadata(); // Se extrae la metadata de esa cancion
-        // Se asigna cada atributo de la cancion en los label de la interfaz
-        artistLabel.setText(song.getArtist());
-        songLabel.setText(song.getTitle());
-        albumLabel.setText(song.getAlbum());
-        generoLabel.setText(song.getGenre());
-        upvoteLabel1.setText(song.getUp_votes());
-        downvoteLabel1.setText(song.getDown_votes());
-        RefLabel.setText((song.getRef()));
-        mediaPlayer.play();
-    }
-    // Funcion que se le asigna al boton de pausar la cancion
-    @FXML
-    public void stopMedia() {
-        mediaPlayer.pause();
-    }
-    // Funcion que se le asigna al boton para devolverse a la cancion anterior
-    @FXML
-    public void previousMedia() {
-        if(SongNumber>0){
-            SongNumber--; // Se disminuye en uno, el valor actual de la variable
-            mediaPlayer.stop(); // Se para el reproductor actual
-            media = new Media(playlist.get(SongNumber).toURI().toString()); // Se guarda el nuevo media con la cancion actual
-            mediaPlayer = new MediaPlayer(media); // Se crea el mediaplayer nuevo
+        if (!Server){
             File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
             Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
             song.extractMetadata(); // Se extrae la metadata de esa cancion
@@ -344,231 +334,570 @@ public class MainSceneController implements Initializable {
             downvoteLabel1.setText(song.getDown_votes());
             RefLabel.setText((song.getRef()));
             mediaPlayer.play();
-            // Controlador de volumen
-            volumeController.valueProperty().addListener(new ChangeListener<Number>() {
-                // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
-                @Override
-                public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-                    mediaPlayer.setVolume(volumeController.getValue() * 0.01);
-                }
-            });
-            // Timeline de la cancion
-            mediaPlayer.setOnReady(() -> {
-                double duration = mediaPlayer.getTotalDuration().toSeconds();
-                progressSlider.setMax(duration);
-                // Se crea el Timeline para actualizar el Slider en la interfaz
-                timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
-                    if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
-                            !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
-                        // Se asigna el tiempo de la cancion al slider
-                        progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
-                    }
-                }));
-                timeline.setCycleCount(Timeline.INDEFINITE);
-                timeline.play(); // Comienza la actualizacion del Slider
-            });
-            mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
-                progressSlider.setValue(newValue.toSeconds());
-            });
-
-            // Se encarga de actualizar los cambios en el slider
-            progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                if (progressSlider.isValueChanging()) {
-                    mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
-                }
-            });
         }else{
-            SongNumber = playlist.size()-1;
-            mediaPlayer.stop();
-            media = new Media(playlist.get(SongNumber).toURI().toString());
-            mediaPlayer = new MediaPlayer(media);
-            File mp3 = playlist.get(SongNumber);
+            mediaPlayer1.play();
+            File mp3 = CommunityPlaylist.getSong(SongNumberCommunity);
             Song song = new Song(mp3);
             song.extractMetadata();
             artistLabel.setText(song.getArtist());
             songLabel.setText(song.getTitle());
             albumLabel.setText(song.getAlbum());
             generoLabel.setText(song.getGenre());
-            upvoteLabel1.setText(song.getUp_votes());
+            upvoteLabel1.setText(String.valueOf(CommunityPlaylist.getPriority(SongNumberCommunity)));
             downvoteLabel1.setText(song.getDown_votes());
             RefLabel.setText((song.getRef()));
-            mediaPlayer.play();
-            // Controlador de volumen
-            volumeController.valueProperty().addListener(new ChangeListener<Number>() {
-                // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
-                @Override
-                public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-                    mediaPlayer.setVolume(volumeController.getValue() * 0.01);
-                }
-            });
-            // Timeline de la cancion
-            mediaPlayer.setOnReady(() -> {
-                double duration = mediaPlayer.getTotalDuration().toSeconds();
-                progressSlider.setMax(duration);
-                // Se crea el Timeline para actualizar el Slider en la interfaz
-                timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
-                    if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
-                            !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
-                        // Se asigna el tiempo de la cancion al slider
-                        progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
-                    }
-                }));
-                timeline.setCycleCount(Timeline.INDEFINITE);
-                timeline.play(); // Comienza la actualizacion del Slider
-            });
-            mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
-                progressSlider.setValue(newValue.toSeconds());
-            });
+            }
 
-            // Se encarga de actualizar los cambios en el slider
-            progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                if (progressSlider.isValueChanging()) {
-                    mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
-                }
-            });
+    }
+    // Funcion que se le asigna al boton de pausar la cancion
+    @FXML
+    public void stopMedia() {
+        if(!Server){
+            mediaPlayer.pause();
+        }else{
+            mediaPlayer1.pause();
+        }
+    }
+    // Funcion que se le asigna al boton para devolverse a la cancion anterior
+    @FXML
+    public void previousMedia() {
+        if(!Server){
+            if(SongNumber>0){
+                SongNumber--; // Se disminuye en uno, el valor actual de la variable
+                mediaPlayer.stop(); // Se para el reproductor actual
+                media = new Media(playlist.get(SongNumber).toURI().toString()); // Se guarda el nuevo media con la cancion actual
+                mediaPlayer = new MediaPlayer(media); // Se crea el mediaplayer nuevo
+                File mp3 = playlist.get(SongNumber); // Se guarda la cancion actual en una variable
+                Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
+                song.extractMetadata(); // Se extrae la metadata de esa cancion
+                // Se asigna cada atributo de la cancion en los label de la interfaz
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer.setOnReady(() -> {
+                    double duration = mediaPlayer.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
+
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            }else{
+                SongNumber = playlist.size()-1;
+                mediaPlayer.stop();
+                media = new Media(playlist.get(SongNumber).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                File mp3 = playlist.get(SongNumber);
+                Song song = new Song(mp3);
+                song.extractMetadata();
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer.setOnReady(() -> {
+                    double duration = mediaPlayer.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
+
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            }
+        }else{
+            if(SongNumberCommunity>0){
+                SongNumberCommunity--; // Se disminuye en uno, el valor actual de la variable
+                mediaPlayer1.stop(); // Se para el reproductor actual
+                media1 = new Media(playlist.get(SongNumberCommunity).toURI().toString()); // Se guarda el nuevo media con la cancion actual
+                mediaPlayer1 = new MediaPlayer(media1); // Se crea el mediaplayer nuevo
+                File mp3 = CommunityPlaylist.getSong(SongNumberCommunity); // Se guarda la cancion actual en una variable
+                Song song = new Song(mp3); // Se crea un nuevo objeto cancion con el mp3
+                song.extractMetadata(); // Se extrae la metadata de esa cancion
+                // Se asigna cada atributo de la cancion en los label de la interfaz
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer1.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer1.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer1.setOnReady(() -> {
+                    double duration = mediaPlayer1.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer1.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer1.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer1.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer1.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
+
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer1.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            }else{
+                SongNumberCommunity = CommunityPlaylist.getSize()-1;
+                mediaPlayer1.stop();
+                media1 = new Media(CommunityPlaylist.getSong(SongNumberCommunity).toURI().toString());
+                mediaPlayer1 = new MediaPlayer(media1);
+                File mp3 = CommunityPlaylist.getSong(SongNumberCommunity);
+                Song song = new Song(mp3);
+                song.extractMetadata();
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer1.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer1.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer1.setOnReady(() -> {
+                    double duration = mediaPlayer1.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer1.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer1.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer1.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer1.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
+
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer1.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            }
         }
     }
     @FXML
     public void nextMedia() {
-        if(SongNumber < playlist.size()) {
-            SongNumber++;
-            mediaPlayer.stop();
-            media = new Media(playlist.get(SongNumber).toURI().toString());
-            mediaPlayer = new MediaPlayer(media);
-            File mp3 = playlist.get(SongNumber);
-            Song song = new Song(mp3);
-            song.extractMetadata();
-            artistLabel.setText(song.getArtist());
-            songLabel.setText(song.getTitle());
-            albumLabel.setText(song.getAlbum());
-            generoLabel.setText(song.getGenre());
-            upvoteLabel1.setText(song.getUp_votes());
-            downvoteLabel1.setText(song.getDown_votes());
-            RefLabel.setText((song.getRef()));
-            mediaPlayer.play();
-            // Controlador de volumen
-            volumeController.valueProperty().addListener(new ChangeListener<Number>() {
-                // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
-                @Override
-                public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-                    mediaPlayer.setVolume(volumeController.getValue() * 0.01);
-                }
-            });
-            // Timeline de la cancion
-            mediaPlayer.setOnReady(() -> {
-                double duration = mediaPlayer.getTotalDuration().toSeconds();
-                progressSlider.setMax(duration);
-                // Se crea el Timeline para actualizar el Slider en la interfaz
-                timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
-                    if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
-                            !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
-                        // Se asigna el tiempo de la cancion al slider
-                        progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
+        if(!Server){
+            if(SongNumber < playlist.size()) {
+                SongNumber++;
+                mediaPlayer.stop();
+                media = new Media(playlist.get(SongNumber).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                File mp3 = playlist.get(SongNumber);
+                Song song = new Song(mp3);
+                song.extractMetadata();
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer.setVolume(volumeController.getValue() * 0.01);
                     }
-                }));
-                timeline.setCycleCount(Timeline.INDEFINITE);
-                timeline.play(); // Comienza la actualizacion del Slider
-            });
-            mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
-                progressSlider.setValue(newValue.toSeconds());
-            });
+                });
+                // Timeline de la cancion
+                mediaPlayer.setOnReady(() -> {
+                    double duration = mediaPlayer.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
 
-            // Se encarga de actualizar los cambios en el slider
-            progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                if (progressSlider.isValueChanging()) {
-                    mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
-                }
-            });
-        } else {
-            SongNumber = 0;
-            mediaPlayer.stop();
-            media = new Media(playlist.get(SongNumber).toURI().toString());
-            mediaPlayer = new MediaPlayer(media);
-            File mp3 = playlist.get(SongNumber);
-            Song song = new Song(mp3);
-            song.extractMetadata();
-            artistLabel.setText(song.getArtist());
-            songLabel.setText(song.getTitle());
-            albumLabel.setText(song.getAlbum());
-            generoLabel.setText(song.getGenre());
-            upvoteLabel1.setText(song.getUp_votes());
-            downvoteLabel1.setText(song.getDown_votes());
-            RefLabel.setText((song.getRef()));
-            mediaPlayer.play();
-            // Controlador de volumen
-            volumeController.valueProperty().addListener(new ChangeListener<Number>() {
-                // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
-                @Override
-                public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-                    mediaPlayer.setVolume(volumeController.getValue() * 0.01);
-                }
-            });
-            // Timeline de la cancion
-            mediaPlayer.setOnReady(() -> {
-                double duration = mediaPlayer.getTotalDuration().toSeconds();
-                progressSlider.setMax(duration);
-                // Se crea el Timeline para actualizar el Slider en la interfaz
-                timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
-                    if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
-                            !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
-                        // Se asigna el tiempo de la cancion al slider
-                        progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
                     }
-                }));
-                timeline.setCycleCount(Timeline.INDEFINITE);
-                timeline.play(); // Comienza la actualizacion del Slider
-            });
-            mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
-                progressSlider.setValue(newValue.toSeconds());
-            });
+                });
+            } else {
+                SongNumber = 0;
+                mediaPlayer.stop();
+                media = new Media(playlist.get(SongNumber).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                File mp3 = playlist.get(SongNumber);
+                Song song = new Song(mp3);
+                song.extractMetadata();
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer.setOnReady(() -> {
+                    double duration = mediaPlayer.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
 
-            // Se encarga de actualizar los cambios en el slider
-            progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                if (progressSlider.isValueChanging()) {
-                    mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
-                }
-            });
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            }
+        }else{
+            if(SongNumberCommunity < CommunityPlaylist.getSize()) {
+                SongNumberCommunity++;
+                mediaPlayer1.stop();
+                media1 = new Media(CommunityPlaylist.getSong(SongNumberCommunity).toURI().toString());
+                mediaPlayer1 = new MediaPlayer(media1);
+                File mp3 = CommunityPlaylist.getSong(SongNumberCommunity);
+                Song song = new Song(mp3);
+                song.extractMetadata();
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer1.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer1.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer1.setOnReady(() -> {
+                    double duration = mediaPlayer1.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer1.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer1.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer1.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer1.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
+
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer1.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            } else {
+                SongNumberCommunity = 0;
+                mediaPlayer1.stop();
+                media1 = new Media(playlist.get(SongNumberCommunity).toURI().toString());
+                mediaPlayer1 = new MediaPlayer(media1);
+                File mp3 = playlist.get(SongNumberCommunity);
+                Song song = new Song(mp3);
+                song.extractMetadata();
+                artistLabel.setText(song.getArtist());
+                songLabel.setText(song.getTitle());
+                albumLabel.setText(song.getAlbum());
+                generoLabel.setText(song.getGenre());
+                upvoteLabel1.setText(song.getUp_votes());
+                downvoteLabel1.setText(song.getDown_votes());
+                RefLabel.setText((song.getRef()));
+                mediaPlayer1.play();
+                // Controlador de volumen
+                volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+                    // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+                    @Override
+                    public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                        mediaPlayer1.setVolume(volumeController.getValue() * 0.01);
+                    }
+                });
+                // Timeline de la cancion
+                mediaPlayer1.setOnReady(() -> {
+                    double duration = mediaPlayer1.getTotalDuration().toSeconds();
+                    progressSlider.setMax(duration);
+                    // Se crea el Timeline para actualizar el Slider en la interfaz
+                    timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                        if (!mediaPlayer1.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                                !mediaPlayer1.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                            // Se asigna el tiempo de la cancion al slider
+                            progressSlider.setValue(mediaPlayer1.getCurrentTime().toSeconds());
+                        }
+                    }));
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play(); // Comienza la actualizacion del Slider
+                });
+                mediaPlayer1.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+                    progressSlider.setValue(newValue.toSeconds());
+                });
+
+                // Se encarga de actualizar los cambios en el slider
+                progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (progressSlider.isValueChanging()) {
+                        mediaPlayer1.seek(Duration.seconds(newValue.doubleValue()));
+                    }
+                });
+            }
         }
     }
     public void advanceMedia(){
-        // Se obtiene el tiempo actual actual de reproduccion
-        Duration currentDuration = mediaPlayer.getCurrentTime();
+        if(!Server){
+            // Se obtiene el tiempo actual actual de reproduccion
+            Duration currentDuration = mediaPlayer.getCurrentTime();
 
-        // Se anaden 5 segundos desde el tiempo actual
-        Duration newDuration = currentDuration.add(Duration.seconds(5));
+            // Se anaden 5 segundos desde el tiempo actual
+            Duration newDuration = currentDuration.add(Duration.seconds(5));
 
-        // Se asegura de que no se exceda de la duración total de la cancion
-        if (newDuration.lessThanOrEqualTo(mediaPlayer.getTotalDuration())) {
-            mediaPlayer.seek(newDuration);
-        } else {
-            // Si se excede la duración total, simplemente se lleva al final de la cancion
-            mediaPlayer.seek(mediaPlayer.getTotalDuration());
+            // Se asegura de que no se exceda de la duración total de la cancion
+            if (newDuration.lessThanOrEqualTo(mediaPlayer.getTotalDuration())) {
+                mediaPlayer.seek(newDuration);
+            } else {
+                // Si se excede la duración total, simplemente se lleva al final de la cancion
+                mediaPlayer.seek(mediaPlayer.getTotalDuration());
+            }
+        }else{
+            // Se obtiene el tiempo actual actual de reproduccion
+            Duration currentDuration = mediaPlayer1.getCurrentTime();
+
+            // Se anaden 5 segundos desde el tiempo actual
+            Duration newDuration = currentDuration.add(Duration.seconds(5));
+
+            // Se asegura de que no se exceda de la duración total de la cancion
+            if (newDuration.lessThanOrEqualTo(mediaPlayer1.getTotalDuration())) {
+                mediaPlayer1.seek(newDuration);
+            } else {
+                // Si se excede la duración total, simplemente se lleva al final de la cancion
+                mediaPlayer1.seek(mediaPlayer1.getTotalDuration());
+            }
         }
     }
     public void delayMedia(){
-        // Se obtiene el tiempo actual actual de reproduccion
-        Duration currentDuration = mediaPlayer.getCurrentTime();
+        if(!Server){
+            // Se obtiene el tiempo actual actual de reproduccion
+            Duration currentDuration = mediaPlayer.getCurrentTime();
 
-        // Se restan 5 segundos desde el tiempo actual
-        Duration newDuration = currentDuration.subtract(Duration.seconds(5));
+            // Se restan 5 segundos desde el tiempo actual
+            Duration newDuration = currentDuration.subtract(Duration.seconds(5));
 
-        // Se asegura de que no se exceda del principio de la cancion
-        if (newDuration.greaterThanOrEqualTo(Duration.ZERO)) {
-            mediaPlayer.seek(newDuration);
-        } else {
-            // Si se excede del principio, simplemente se lleva al inicio de la cancion
-            mediaPlayer.seek(Duration.ZERO);
+            // Se asegura de que no se exceda del principio de la cancion
+            if (newDuration.greaterThanOrEqualTo(Duration.ZERO)) {
+                mediaPlayer.seek(newDuration);
+            } else {
+                // Si se excede del principio, simplemente se lleva al inicio de la cancion
+                mediaPlayer.seek(Duration.ZERO);
+            }
+        }else{
+            // Se obtiene el tiempo actual actual de reproduccion
+            Duration currentDuration = mediaPlayer1.getCurrentTime();
+
+            // Se restan 5 segundos desde el tiempo actual
+            Duration newDuration = currentDuration.subtract(Duration.seconds(5));
+
+            // Se asegura de que no se exceda del principio de la cancion
+            if (newDuration.greaterThanOrEqualTo(Duration.ZERO)) {
+                mediaPlayer1.seek(newDuration);
+            } else {
+                // Si se excede del principio, simplemente se lleva al inicio de la cancion
+                mediaPlayer1.seek(Duration.ZERO);
+            }
         }
     }
     // Funcion que se le asigna al boton de eliminar la cancion
     public void deleteMedia(){
-        mediaPlayer.pause(); // Se pausa el reproductor
-        playlist.remove(SongNumber); // Se remueve la cancion actual de la lista doblemente enlazada
-        SongNumber--; // Se reduce en uno el songnumber
-        nextMedia(); // Se reproduce la cancion siguiente \
+            if(!Server){
+                mediaPlayer.pause(); // Se pausa el reproductor
+                playlist.remove(SongNumber); // Se remueve la cancion actual de la lista doblemente enlazada
+                SongNumber--; // Se reduce en uno el songnumber
+                nextMedia(); // Se reproduce la cancion siguiente \
+            }else{
+                mediaPlayer1.pause(); // Se pausa el reproductor
+                playlist.remove(SongNumberCommunity); // Se remueve la cancion actual de la lista doblemente enlazada
+                SongNumberCommunity--; // Se reduce en uno el songnumber
+                nextMedia(); // Se reproduce la cancion siguiente \
+            }
     }
 
     public void Servidor(){
         serverThread.start(); // Inicia el hilo del servidor
+        mediaPlayer.stop();
+        Server = true;
+        try {
+            if (CommunityPlaylist.getSize()>0) {
+                // se guarda el numero de cancion, inicialmente en 0, y se le asigna al mediaplayer
+                media1 = new Media(CommunityPlaylist.getSong(SongNumberCommunity).toURI().toString());
+                mediaPlayer1 = new MediaPlayer(media1);
+                logger.info(media1);
+                logger.info(mediaPlayer1);
+
+            }else{
+                logger.info("No se encontraron archivos de música en el directorio.");
+            }
+
+        } catch (Exception e) {
+            logger.error("Error loading media: " + e.getMessage());
+        }
+        // Controlador de volumen
+        volumeController.valueProperty().addListener(new ChangeListener<Number>() {
+            // Se crea la funcion changed, para actualizar el volumen junto el slider de la interfaz
+            @Override
+            public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+                mediaPlayer1.setVolume(volumeController.getValue() * 0.01);
+            }
+        });
+        // Timeline de la cancion
+        mediaPlayer1.setOnReady(() -> {
+            double duration = mediaPlayer1.getTotalDuration().toSeconds();
+            progressSlider.setMax(duration);
+            // Se crea el Timeline para actualizar el Slider en la interfaz
+            timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+                if (!mediaPlayer1.getStatus().equals(MediaPlayer.Status.PAUSED) &&
+                        !mediaPlayer1.getStatus().equals(MediaPlayer.Status.STOPPED)) {
+                    // Se asigna el tiempo de la cancion al slider
+                    progressSlider.setValue(mediaPlayer1.getCurrentTime().toSeconds());
+                }
+            }));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play(); // Comienza la actualizacion del Slider
+        });
+        mediaPlayer1.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+            progressSlider.setValue(newValue.toSeconds());
+        });
+
+        // Se encarga de actualizar los cambios en el slider
+        progressSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (progressSlider.isValueChanging()) {
+                mediaPlayer1.seek(Duration.seconds(newValue.doubleValue()));
+            }
+        });
+        CommunityPlaylist.printPlaylist();
     }
 }
