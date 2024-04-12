@@ -8,7 +8,9 @@ public class NodePriority {
     File mp3File;
     int priority;
     String Guid;
-    public NodePriority(File mp3File, int priority) {
+    int UpVotes = 0;
+    int DownVotes = 0;
+    public NodePriority(File mp3File, int priority) {  //Constructor
         this.mp3File = mp3File;
         this.priority = priority;
         this.prev = null;
