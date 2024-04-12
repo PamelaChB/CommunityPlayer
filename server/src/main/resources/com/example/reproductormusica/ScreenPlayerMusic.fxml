@@ -10,12 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="653.0" style="-fx-background-color: FBFADA; -fx-border-width: 222; -fx-border-color: 436850;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.reproductormusica.MainSceneController">
    <children>
-      <Label fx:id="songLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="228.0" layoutY="48.0" prefHeight="38.0" prefWidth="216.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="songLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="215.0" layoutY="48.0" prefHeight="38.0" prefWidth="237.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="RefLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="228.0" layoutY="20.0" prefHeight="38.0" prefWidth="216.0" text=" " textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="RefLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="209.0" layoutY="20.0" prefHeight="38.0" prefWidth="254.0" text=" " textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="10.0" />
          </font>
@@ -35,17 +35,17 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="artistLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="288.0" layoutY="93.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="artistLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="190.0" layoutY="93.0" prefHeight="19.0" prefWidth="297.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="albumLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="288.0" layoutY="119.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="albumLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="202.0" layoutY="119.0" prefHeight="19.0" prefWidth="270.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="generoLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="288.0" layoutY="146.0" prefHeight="18.0" prefWidth="95.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="generoLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="209.0" layoutY="146.0" prefHeight="19.0" prefWidth="262.0" text="" textAlignment="CENTER" textFill="#12372a" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
@@ -60,7 +60,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="communityButton" layoutX="14.0" layoutY="364.0"  mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Community Player" textFill="#12372a" onAction="#Servidor">
+      <Button fx:id="communityButton" layoutX="14.0" layoutY="364.0" mnemonicParsing="false" onAction="#Servidor" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #ADBC9F; -fx-border-color: #12372A;" text="Community Player" textFill="#12372a">
          <effect>
             <Blend />
          </effect>
