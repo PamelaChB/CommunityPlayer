@@ -1,4 +1,6 @@
-﻿using System.Net.Sockets;
+﻿using System;
+using System.IO;
+using System.Net.Sockets;
 using System.Text;
 using IniParser;
 using IniParser.Model;
@@ -23,10 +25,10 @@ namespace Proyecto
         {
             _loggerFactory = LoggerFactory.Create(builder =>
             {
-                builder.AddConsole();                    
+                builder.AddConsole();
             });
 
-            string workingDirectory = Environment.CurrentDirectory; 
+            string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
             string projectRootDirectory = Directory.GetParent(projectDirectory).FullName;
 
@@ -35,7 +37,7 @@ namespace Proyecto
             _logger = _loggerFactory.CreateLogger<Form1>();
 
             var parser = new FileIniDataParser();
-            this.data = parser.ReadFile("C:\\Users\\XPC\\OneDrive - Estudiantes ITCR\\Escritorio\\PDatos\\CommunityPlayer\\config.ini");
+            this.data = parser.ReadFile("C:\\Users\\fmoreno\\source\\repos\\CommunityPlayer\\cliente\\Proyecto\\config.ini");
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -69,8 +71,9 @@ namespace Proyecto
         {
             // Leer la configuración del archivo .INI
             string puertoEscucha = data["Servidor"]["PuertoEscucha"];
-
-            SendVote("up", puertoEscucha);
+            Mensaje mensaje = new Mensaje("Vote-up");
+            String mensajeJson = mensaje.ToJson();
+            SendVote(mensajeJson, puertoEscucha);
 
             // Utilizar el logger para registrar mensajes
             _logger.LogInformation("Hello, World! My port is: " + puertoEscucha);
@@ -80,14 +83,15 @@ namespace Proyecto
         {
             // Leer la configuración del archivo .INI
             string puertoEscucha = data["Servidor"]["PuertoEscucha"];
-
-            SendVote("down", puertoEscucha);
+            Mensaje mensaje = new Mensaje("Vote-down");
+            String mensajeJson = mensaje.ToJson();
+            SendVote(mensajeJson, puertoEscucha);
 
             // Utilizar el logger para registrar mensajes
             _logger.LogInformation("Hello, World! My port is: " + puertoEscucha);
         }
 
-        private void SendVote(string vote, string puertoEscucha)
+        private void SendVote(string message, string puertoEscucha)
         {
             try
             {
@@ -100,18 +104,18 @@ namespace Proyecto
 
                 // Establecer la conexión con el servidor
                 client = new TcpClient("localhost", int.Parse(puertoEscucha));
-
                 NetworkStream stream = client.GetStream();
 
-                string message = "vote:" + vote;
-
+                Console.WriteLine(message);
+                Console.WriteLine("Json enviado al server");
                 byte[] data = Encoding.ASCII.GetBytes(message);
-
+                Console.WriteLine(message);
                 stream.Write(data, 0, data.Length);
+                
 
                 client.Close();
 
-                label1.Text = "Voto enviado al servidor: " + vote;
+                label1.Text = "Voto enviado al servidor: " + message;
             }
             catch (Exception ex)
             {
