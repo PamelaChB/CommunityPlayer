@@ -119,10 +119,19 @@ public class MainSceneController implements Initializable {
                     System.out.println("Señal recibida del cliente: " + signal);
 
                     // Manejar la señal recibida
-                    if (signal.equals("vote:up")) {
+                    if (signal.equals("{\"command\":\"Vote-up\"}")) {
                         this.handleUpVote();
-                    } else if (signal.equals("vote:down")) {
+                        String response = "{\"commmand\": \"vote-up\", \"status\": \"OK\"}";
+                        this.enviarMsg(response);
+                    } else if (signal.equals("{\"command\":\"Vote-down\"}")) {
                         this.handleDownVote();
+                        String response = "{\"commmand\": \"vote-down\", \"status\": \"OK\"}";
+                        this.enviarMsg(response);
+                    }else if(signal.equals("getPlaylist")){
+                        this.enviarMsg(CommunityPlaylist.getPlaylistAsString());
+                    } else{
+                        String response = "{\"commmand\": \"" + signal + "\" status\": \"OK\"}";
+                        this.enviarMsg(response);
                     }
 
                     // Envía una confirmación al cliente
@@ -147,7 +156,7 @@ public class MainSceneController implements Initializable {
 
 
         // Se le asigna la carpeta donde estan los mp3
-        directory = new File("C:\\Users\\Pamela Chacón\\Desktop\\ProyectoDatos 1\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
+        directory = new File("C:\\Users\\fmoreno\\Desktop\\ProyectoDatos1\\CommunityPlayer\\server\\src\\main\\java\\com\\example\\reproductormusica\\mp3");
         // Las canciones se guardan en esta variable
         songs = directory.listFiles();
         if(songs != null) {
@@ -286,7 +295,7 @@ public class MainSceneController implements Initializable {
             outputStream.flush(); // Forzar el envío del mensaje
             System.out.println("Mensaje enviado al cliente: " + mensaje);
         } catch (IOException e) {
-            System.out.println("Error al enviar mensaje al cliente: " + e.getMessage());
+            logger.error("Error al enviar mensaje al cliente: " + e.getMessage());
         }
     }
 
