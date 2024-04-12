@@ -13,6 +13,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.prefs.Preferences;
 
+//Punto de entrada del reproductor de música en donde se configura y muestra la interfaz de usuario.
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {

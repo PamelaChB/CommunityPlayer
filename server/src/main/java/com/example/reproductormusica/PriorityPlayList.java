@@ -5,18 +5,18 @@ import java.util.UUID;
 
 public class PriorityPlayList implements PriorityQueue {
 
-    private NodePriority front;
-    private NodePriority rear;
+    private NodePriority front; //Primer nodo de la lista.
+    private NodePriority rear;  //Último nodo de la lista.
     private int size;
-    private String GuidId;
-    private int priority;
+    private String GuidId; // Identificador único para cada nodo.
+    private int priority; // Prioridad total de la lista.
 
     public PriorityPlayList() {
         front = null;
         rear = null;
         size = 0;
     }
-
+    //Agrega un nuevo nodo a la lista
     @Override
     public void enqueue(File song, int priority) {
         NodePriority newNode = new NodePriority(song, priority);
@@ -41,6 +41,7 @@ public class PriorityPlayList implements PriorityQueue {
         size++;
     }
 
+    //Elimina y devuelve el primer nodo de la lista
     @Override
     public File dequeue() {
         if (front == null) {
@@ -54,6 +55,7 @@ public class PriorityPlayList implements PriorityQueue {
         return null;
     }
 
+    //Devuelve el primer nodo de la lista sin eliminarlo.
     @Override
     public File front() {
         if (front == null) {
@@ -63,6 +65,8 @@ public class PriorityPlayList implements PriorityQueue {
         }
         return null;
     }
+
+    // Devuelve el archivo de música en la posición especificada de la lista.
     public File getSong(int index) {
         if (front == null) {
             System.out.println("Playlist is empty");
@@ -84,11 +88,14 @@ public class PriorityPlayList implements PriorityQueue {
             return null;
         }
     }
+
+    //Devuelve el tamaño actual de la lista.
     public int getSize() {
         return size; // Método para obtener el tamaño de la lista
     }
 
 
+    //Imprime los elementos de la lista de reproducción junto con sus identificadores Guid.
     public void printPlaylist() {
         if (front == null) {
             System.out.println("Playlist is empty");
@@ -101,6 +108,8 @@ public class PriorityPlayList implements PriorityQueue {
             current = current.next;
         }
     }
+
+    //Devuelve la prioridad del elemento en la posición especificada.
     public int getPriority(int index){
         if(index < 0 || index >= size){
             return -1;
@@ -117,6 +126,8 @@ public class PriorityPlayList implements PriorityQueue {
             return -1;
         }
     }
+
+    //Devuelve el identificador único del elemento en la posición especificada.
     public String getGuidId(int index){
         if(index < 0 || index >= size){
             return "error";
@@ -133,6 +144,8 @@ public class PriorityPlayList implements PriorityQueue {
             return "error";
         }
     }
+
+    //Incrementa el número de votos positivos.
     public void setUpVotes(int index){
         if(index < 0 || index >= size){
         }
@@ -147,6 +160,8 @@ public class PriorityPlayList implements PriorityQueue {
         }
         priority++;
     }
+
+    // Incrementa el número de votos negativos.
     public void setDownVotes(int index){
         if(index < 0 || index >= size){
         }
@@ -161,6 +176,8 @@ public class PriorityPlayList implements PriorityQueue {
         }
         priority--;
     }
+
+    //Devuelve el número de votos positivos.
     public int getUpVotes(int index){
         if(index < 0 || index >= size){
             return -1;
@@ -177,6 +194,8 @@ public class PriorityPlayList implements PriorityQueue {
             return -1;
         }
     }
+
+    //Devuelve el número de votos negativos.
     public int getDownVotes(int index){
         if(index < 0 || index >= size){
             return -1;
@@ -193,6 +212,8 @@ public class PriorityPlayList implements PriorityQueue {
             return -1;
         }
     }
+
+    //Actualiza el orden de prioridad de la lista si es necesario, moviendo los elementos según sus prioridades.
     public void updatePriorityOrder() {
         if (size <= 1) {
             // No es necesario actualizar si la lista tiene 0 o 1 elemento

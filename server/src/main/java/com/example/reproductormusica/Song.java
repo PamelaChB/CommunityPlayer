@@ -39,6 +39,7 @@ public class Song {
         this.genre = "";
         this.RefMp3 = "";
     }
+
     // Setters de los votos de cada cancion
     public void setUp_votes(int num){
         this.up_votes += num;
@@ -46,6 +47,7 @@ public class Song {
     public void setDown_votes(int num){
         this.down_votes += num;
     }
+
     // Getters de los atributos
     public String getTitle(){
         return this.title;
@@ -90,6 +92,7 @@ public class Song {
             logger.error(e);
         }
     }
+
     // Funcion que printea la metadata en consola
     public void printMetadata(){
         System.out.println("Nombre: " + this.title);

@@ -26,10 +26,12 @@ public class DoublyLinkedList {
             this.size++;
         }
     }
-    // Funcion que retorna el tamano de la lista
+
+    // Funcion que retorna el tamaño de la lista
     public int size() {
         return this.size;
     }
+
     // Funcion que elimina el contenido de la lista segun el indice dado
     public void remove(int index) {
         if (index < 0 || index >= size) {
@@ -70,7 +72,8 @@ public class DoublyLinkedList {
         }
         size--; // Se resta en uno el tamano de la lista
     }
-    // Funcion que retorna el mp3 segun el indice dado
+
+    // Función que retorna el mp3 según el índice dado
     public File get(int index) {
         Node current = head;
         int currentNumber = 0;
@@ -84,6 +87,8 @@ public class DoublyLinkedList {
             return current.mp3File;
         }
     }
+
+    //Imprime los contenidos de la lista, mostrando la ruta absoluta de cada archivo MP3.
     public void printListContents() {
         Node current = head;
         int index = 1;
