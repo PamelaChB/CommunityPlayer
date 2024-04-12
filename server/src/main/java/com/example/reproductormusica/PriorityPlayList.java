@@ -1,6 +1,8 @@
 package com.example.reproductormusica;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class PriorityPlayList implements PriorityQueue {
@@ -91,7 +93,20 @@ public class PriorityPlayList implements PriorityQueue {
 
     //Devuelve el tamaño actual de la lista.
     public int getSize() {
+
         return size; // Método para obtener el tamaño de la lista
+    }
+
+
+    // Obtener el playlist actualizado
+    public String getPlaylistAsString() {
+        StringBuilder playlistString = new StringBuilder();
+        NodePriority current = front;
+        while (current != null) {
+            playlistString.append(current.mp3File.getName()).append("\n");
+            current = current.next;
+        }
+        return playlistString.toString();
     }
 
 
